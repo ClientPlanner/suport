@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Client Planner — Support</title>
+  <meta name="description" content="Client Planner Support (English, Ukrainian, German, Spanish)" />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --card: #ffffff;
+      --text: #111111;
+      --muted: #5b5f67;
+      --border: rgba(0,0,0,0.10);
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+      --radius: 18px;
+      --max: 920px;
+      --accent: #0a84ff;
+      --chip: rgba(0,0,0,0.06);
+      --good: rgba(48,209,88,0.14);
+      --warn: rgba(255,159,10,0.14);
+      --bad: rgba(255,69,58,0.14);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0c0f;
+        --card: #121318;
+        --text: #f5f5f7;
+        --muted: #a5a7ad;
+        --border: rgba(255,255,255,0.10);
+        --shadow: 0 10px 30px rgba(0,0,0,0.35);
+        --chip: rgba(255,255,255,0.10);
+        --good: rgba(48,209,88,0.18);
+        --warn: rgba(255,159,10,0.18);
+        --bad: rgba(255,69,58,0.18);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light dark; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: calc(24px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left));
+    }
+    @media (min-width: 720px) {
+      .wrap {
+        padding: calc(32px + env(safe-area-inset-top)) calc(24px + env(safe-area-inset-right)) calc(64px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
+      }
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 650;
+      letter-spacing: -0.2px;
+    }
+    .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), rgba(10,132,255,0.55));
+      box-shadow: 0 6px 16px rgba(10,132,255,0.25);
+      flex: 0 0 auto;
+    }
+    .lang {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .langLabel {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .segmented {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+      overflow: hidden;
+    }
+    .segmented button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--muted);
+      min-width: 48px;
+      line-height: 1;
+    }
+    .segmented button[aria-pressed="true"] {
+      background: var(--chip);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .segmented button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 18px 12px;
+    }
+    @media (min-width: 720px) {
+      .card { padding: 28px 32px 16px; }
+    }
+    article.doc {
+      display: none;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    article.doc[data-active="true"] { display: block; }
+    .docHeader h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: -0.6px;
+      line-height: 1.15;
+    }
+    .meta {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .metaLabel {
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .toc {
+      margin-top: 18px;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(127,127,127,0.04);
+    }
+    .tocTitle {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      columns: 1;
+      gap: 12px;
+    }
+    .toc li { break-inside: avoid; }
+    @media (min-width: 760px) {
+      .toc ol { columns: 2; }
+    }
+    .toc a { color: var(--text); }
+    section {
+      margin-top: 18px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(127,127,127,0.10);
+      scroll-margin-top: 18px;
+    }
+    section:first-of-type { border-top: 0; }
+    h2 {
+      margin: 10px 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    h3 {
+      margin: 12px 0 6px;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    p { margin: 8px 0; color: var(--text); }
+    ul { margin: 8px 0 0; padding-left: 18px; }
+    li { margin: 6px 0; color: var(--text); }
+    .contact {
+      font-size: 16px;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(10,132,255,0.08);
+      border: 1px solid rgba(10,132,255,0.18);
+      display: inline-block;
+      word-break: break-word;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--chip);
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1;
+    }
+    .chipDot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      flex: 0 0 auto;
+    }
+    .callout {
+      margin-top: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 12px 12px;
+      background: rgba(127,127,127,0.04);
+    }
+    .callout.good { background: var(--good); border-color: rgba(48,209,88,0.25); }
+    .callout.warn { background: var(--warn); border-color: rgba(255,159,10,0.25); }
+    .callout.bad { background: var(--bad); border-color: rgba(255,69,58,0.25); }
+    .calloutTitle {
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      margin-bottom: 4px;
+    }
+    .docFooter {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(127,127,127,0.10);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .siteFooter {
+      margin-top: 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .twoCol {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 760px) {
+      .twoCol { grid-template-columns: 1fr 1fr; }
+    }
+    .linkBox {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 12px;
+      background: rgba(127,127,127,0.04);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>Client Planner</div>
+      </div>
+
+      <div class="lang" role="group" aria-label="Language picker">
+        <div class="langLabel" id="langLabel">Language</div>
+        <div class="segmented" aria-describedby="langLabel" data-lang-group>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang-btn="uk" aria-pressed="false">UA</button>
+          <button type="button" data-lang-btn="de" aria-pressed="false">DE</button>
+          <button type="button" data-lang-btn="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="card" id="card">
+
+      <!-- EN -->
+      <article class="doc" data-lang="en" data-active="false">
+        <header class="docHeader">
+          <h1>Client Planner — Support</h1>
+          <div class="meta"><span class="metaLabel">Last updated:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+        </header>
+
+        <nav class="toc" aria-label="Contents">
+          <div class="tocTitle">Contents</div>
+          <ol>
+            <li><a href="#contact">1) Contact support</a></li>
+            <li><a href="#getting-started">2) Quick help</a></li>
+            <li><a href="#sync-backup">3) Backups, restore, and exports</a></li>
+            <li><a href="#notifications">4) Notifications</a></li>
+            <li><a href="#subscriptions">5) Subscriptions & billing</a></li>
+            <li><a href="#privacy-legal">6) Privacy & legal</a></li>
+            <li><a href="#report">7) Report a bug</a></li>
+          </ol>
+        </nav>
+
+        <section data-anchor="contact">
+          <h2>1) Contact support</h2>
+          <p>The easiest way to reach us is email. We usually respond within a few business days.</p>
+          <p class="contact"><a href="mailto:clientplanner.suport@gmail.com?subject=Client%20Planner%20Support">clientplanner.suport@gmail.com</a></p>
+
+          <div class="callout good">
+            <div class="calloutTitle">Include these details for faster help</div>
+            <ul>
+              <li>What you were trying to do</li>
+              <li>What happened vs. what you expected</li>
+              <li>Steps to reproduce (1–2–3…)</li>
+              <li>Your iPhone model + iOS version</li>
+              <li>Client Planner version (Settings → About)</li>
+              <li>Screenshots or a short screen recording (if possible)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-anchor="getting-started">
+          <h2>2) Quick help</h2>
+          <div class="twoCol">
+            <div class="linkBox">
+              <h3>Common questions</h3>
+              <ul>
+                <li><strong>How do I edit or move an appointment?</strong> Open the appointment and change time/date — the calendar updates instantly.</li>
+                <li><strong>How do I confirm an appointment?</strong> Use the status control inside the appointment card (Planned / Confirmed / etc.).</li>
+                <li><strong>How do I search clients?</strong> Open Clients and use the search field — it matches names, tags, and notes.</li>
+              </ul>
+            </div>
+            <div class="linkBox">
+              <h3>Data safety</h3>
+              <ul>
+                <li>Your data is stored on your device by default.</li>
+                <li>Backups and exports are optional and initiated by you.</li>
+                <li>Use App Lock (Face ID / Touch ID) if you want extra privacy.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="chips" aria-label="Support shortcuts">
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Calendar</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Clients</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Services</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Reminders</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Backups</span>
+          </div>
+        </section>
+
+        <section data-anchor="sync-backup">
+          <h2>3) Backups, restore, and exports</h2>
+          <h3>iCloud backup</h3>
+          <ul>
+            <li>Backups are saved to iCloud Drive under your Apple ID.</li>
+            <li>If iCloud Drive is disabled, backup creation may fail.</li>
+            <li>If a new backup fails, the previous backup is kept whenever possible.</li>
+          </ul>
+
+          <h3>Restore</h3>
+          <ul>
+            <li>Restore is designed as a “replace current data” action to avoid duplicates.</li>
+            <li>If you need help before restoring, email us — include a screenshot of your backup list.</li>
+          </ul>
+
+          <h3>Export</h3>
+          <ul>
+            <li>Exports create a file and let you choose a destination (Files, email, messenger, etc.).</li>
+            <li>Once exported, the file is stored/handled by the destination you choose.</li>
+          </ul>
+
+          <div class="callout warn">
+            <div class="calloutTitle">Tip</div>
+            <p>If you’re switching phones, do a backup on the old device first, then restore on the new device.</p>
+          </div>
+        </section>
+
+        <section data-anchor="notifications">
+          <h2>4) Notifications</h2>
+          <p>Client Planner uses local notifications (generated on your device). If reminders don’t arrive:</p>
+          <ul>
+            <li>Open iOS Settings → Notifications → Client Planner and enable alerts.</li>
+            <li>Check Focus / Do Not Disturb settings.</li>
+            <li>Make sure the reminder options are enabled inside the app.</li>
+          </ul>
+        </section>
+
+        <section data-anchor="subscriptions">
+          <h2>5) Subscriptions & billing</h2>
+          <p>Payments are processed by Apple. To manage or cancel your subscription:</p>
+          <ul>
+            <li>Open iOS Settings → Apple ID → Subscriptions.</li>
+            <li>Or open the App Store → your profile → Subscriptions.</li>
+          </ul>
+
+          <h3>Restore purchases</h3>
+          <p>If Premium isn’t recognized after switching devices or reinstalling, use “Restore Purchases” in the app (if available), or email us with your issue.</p>
+
+          <div class="callout bad">
+            <div class="calloutTitle">Important</div>
+            <p>We can’t manage subscriptions for you — only Apple can. We can help you troubleshoot recognition issues in the app.</p>
+          </div>
+        </section>
+
+        <section data-anchor="privacy-legal">
+          <h2>6) Privacy & legal</h2>
+          <div class="twoCol">
+            <div class="linkBox">
+              <h3>Privacy Policy</h3>
+              <p><a href="https://clientplanner.github.io/suport/PrivacyPolicy.html">Open Privacy Policy</a></p>
+            </div>
+            <div class="linkBox">
+              <h3>Terms of Use</h3>
+              <p><a href="https://clientplanner.github.io/suport/TermsOfUse.html">Open Terms of Use</a></p>
+            </div>
+          </div>
+          <p>Client Planner is designed to keep your data on-device by default and avoid third‑party tracking.</p>
+        </section>
+
+        <section data-anchor="report">
+          <h2>7) Report a bug</h2>
+          <p>We love clean bugs: small, reproducible, and polite. 😄</p>
+          <ul>
+            <li>Write the steps to reproduce</li>
+            <li>Attach screenshots/screen recording</li>
+            <li>Include the exact error text (if any)</li>
+          </ul>
+          <p>Send everything to <a href="mailto:clientplanner.suport@gmail.com?subject=Client%20Planner%20Bug%20Report">clientplanner.suport@gmail.com</a>.</p>
+        </section>
+
+        <footer class="docFooter">
+          <p>© 2026 Client Planner</p>
+        </footer>
+      </article>
+
+      <!-- UK -->
+      <article class="doc" data-lang="uk" data-active="false">
+        <header class="docHeader">
+          <h1>Client Planner — Підтримка</h1>
+          <div class="meta"><span class="metaLabel">Оновлено:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+        </header>
+
+        <nav class="toc" aria-label="Зміст">
+          <div class="tocTitle">Зміст</div>
+          <ol>
+            <li><a href="#contact">1) Як зв’язатися з підтримкою</a></li>
+            <li><a href="#getting-started">2) Швидка допомога</a></li>
+            <li><a href="#sync-backup">3) Бекапи, відновлення та експорт</a></li>
+            <li><a href="#notifications">4) Сповіщення</a></li>
+            <li><a href="#subscriptions">5) Підписки та оплата</a></li>
+            <li><a href="#privacy-legal">6) Конфіденційність і юридичні документи</a></li>
+            <li><a href="#report">7) Повідомити про помилку</a></li>
+          </ol>
+        </nav>
+
+        <section data-anchor="contact">
+          <h2>1) Як зв’язатися з підтримкою</h2>
+          <p>Найзручніше — написати нам на email. Зазвичай відповідаємо протягом кількох робочих днів.</p>
+          <p class="contact"><a href="mailto:clientplanner.suport@gmail.com?subject=Client%20Planner%20Підтримка">clientplanner.suport@gmail.com</a></p>
+
+          <div class="callout good">
+            <div class="calloutTitle">Що додати, щоб ми допомогли швидше</div>
+            <ul>
+              <li>Що ви намагалися зробити</li>
+              <li>Що сталося та що ви очікували</li>
+              <li>Кроки відтворення (1–2–3…)</li>
+              <li>Модель iPhone та версія iOS</li>
+              <li>Версія Client Planner (Налаштування → Про застосунок)</li>
+              <li>Скріншоти або короткий запис екрана (за можливості)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-anchor="getting-started">
+          <h2>2) Швидка допомога</h2>
+          <div class="twoCol">
+            <div class="linkBox">
+              <h3>Поширені питання</h3>
+              <ul>
+                <li><strong>Як перенести або змінити запис?</strong> Відкрийте запис і змініть час/дату — календар оновиться одразу.</li>
+                <li><strong>Як підтвердити запис?</strong> Змініть статус у картці запису (Заплановано / Підтверджено тощо).</li>
+                <li><strong>Як шукати клієнтів?</strong> Відкрийте «Клієнти» і скористайтеся пошуком — він знаходить за іменем, тегами й нотатками.</li>
+              </ul>
+            </div>
+            <div class="linkBox">
+              <h3>Безпека даних</h3>
+              <ul>
+                <li>Дані за замовчуванням зберігаються на пристрої.</li>
+                <li>Бекапи та експорт — опційні й запускаються вами.</li>
+                <li>За потреби увімкніть блокування (Face ID / Touch ID).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="chips" aria-label="Швидкі підказки">
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Календар</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Клієнти</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Послуги</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Нагадування</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Бекапи</span>
+          </div>
+        </section>
+
+        <section data-anchor="sync-backup">
+          <h2>3) Бекапи, відновлення та експорт</h2>
+          <h3>Бекап в iCloud</h3>
+          <ul>
+            <li>Файли бекапів зберігаються в iCloud Drive під вашим Apple ID.</li>
+            <li>Якщо iCloud Drive вимкнено, створення бекапу може не працювати.</li>
+            <li>Якщо новий бекап не вдався, попередній зберігається (коли це можливо).</li>
+          </ul>
+
+          <h3>Відновлення</h3>
+          <ul>
+            <li>Відновлення працює як «замінити поточні дані», щоб уникати дублікатів.</li>
+            <li>Якщо маєте сумніви перед відновленням — напишіть нам і додайте скрін списку бекапів.</li>
+          </ul>
+
+          <h3>Експорт</h3>
+          <ul>
+            <li>Експорт створює файл і дозволяє обрати місце збереження (Файли, пошта, месенджер тощо).</li>
+            <li>Після експорту файл керується сервісом, який ви обрали.</li>
+          </ul>
+
+          <div class="callout warn">
+            <div class="calloutTitle">Порада</div>
+            <p>Якщо ви переходите на новий телефон, спочатку зробіть бекап на старому, а потім відновіть на новому.</p>
+          </div>
+        </section>
+
+        <section data-anchor="notifications">
+          <h2>4) Сповіщення</h2>
+          <p>Client Planner використовує локальні сповіщення (формуються на вашому пристрої). Якщо нагадування не приходять:</p>
+          <ul>
+            <li>Перевірте iOS: Налаштування → Сповіщення → Client Planner.</li>
+            <li>Перевірте режими Фокус / «Не турбувати».</li>
+            <li>Переконайтеся, що нагадування ввімкнені в застосунку.</li>
+          </ul>
+        </section>
+
+        <section data-anchor="subscriptions">
+          <h2>5) Підписки та оплата</h2>
+          <p>Оплату обробляє Apple. Керування/скасування підписки:</p>
+          <ul>
+            <li>iOS: Налаштування → Apple ID → Підписки.</li>
+            <li>Або App Store → профіль → Підписки.</li>
+          </ul>
+
+          <h3>Відновлення покупок</h3>
+          <p>Якщо Premium не розпізнається після перевстановлення або зміни пристрою, скористайтеся «Відновити покупки» в застосунку (якщо доступно) або напишіть нам.</p>
+
+          <div class="callout bad">
+            <div class="calloutTitle">Важливо</div>
+            <p>Ми не можемо керувати підпискою замість вас — це робить лише Apple. Але ми допоможемо з діагностикою в застосунку.</p>
+          </div>
+        </section>
+
+        <section data-anchor="privacy-legal">
+          <h2>6) Конфіденційність і юридичні документи</h2>
+          <div class="twoCol">
+            <div class="linkBox">
+              <h3>Політика конфіденційності</h3>
+              <p><a href="https://clientplanner.github.io/suport/PrivacyPolicy.html">Відкрити</a></p>
+            </div>
+            <div class="linkBox">
+              <h3>Умови використання</h3>
+              <p><a href="https://clientplanner.github.io/suport/TermsOfUse.html">Відкрити</a></p>
+            </div>
+          </div>
+          <p>Client Planner створено так, щоб дані за замовчуванням залишалися на пристрої та без стороннього трекінгу.</p>
+        </section>
+
+        <section data-anchor="report">
+          <h2>7) Повідомити про помилку</h2>
+          <p>Найкраща помилка — та, яку можна відтворити. 🙂</p>
+          <ul>
+            <li>Опишіть кроки відтворення</li>
+            <li>Додайте скріншоти/відео екрана</li>
+            <li>Скопіюйте точний текст помилки (якщо є)</li>
+          </ul>
+          <p>Надсилайте на <a href="mailto:clientplanner.suport@gmail.com?subject=Client%20Planner%20Bug%20Report">clientplanner.suport@gmail.com</a>.</p>
+        </section>
+
+        <footer class="docFooter">
+          <p>© 2026 Client Planner</p>
+        </footer>
+      </article>
+
+      <!-- DE -->
+      <article class="doc" data-lang="de" data-active="false">
+        <header class="docHeader">
+          <h1>Client Planner — Support</h1>
+          <div class="meta"><span class="metaLabel">Aktualisiert am:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+        </header>
+
+        <nav class="toc" aria-label="Inhalt">
+          <div class="tocTitle">Inhalt</div>
+          <ol>
+            <li><a href="#contact">1) Support kontaktieren</a></li>
+            <li><a href="#getting-started">2) Schnelle Hilfe</a></li>
+            <li><a href="#sync-backup">3) Backups, Wiederherstellung & Export</a></li>
+            <li><a href="#notifications">4) Benachrichtigungen</a></li>
+            <li><a href="#subscriptions">5) Abos & Abrechnung</a></li>
+            <li><a href="#privacy-legal">6) Datenschutz & Rechtliches</a></li>
+            <li><a href="#report">7) Fehler melden</a></li>
+          </ol>
+        </nav>
+
+        <section data-anchor="contact">
+          <h2>1) Support kontaktieren</h2>
+          <p>Am einfachsten erreichen Sie uns per E‑Mail. In der Regel antworten wir innerhalb weniger Werktage.</p>
+          <p class="contact"><a href="mailto:clientplanner.suport@gmail.com?subject=Client%20Planner%20Support">clientplanner.suport@gmail.com</a></p>
+
+          <div class="callout good">
+            <div class="calloutTitle">Diese Infos helfen uns schneller</div>
+            <ul>
+              <li>Was Sie gerade tun wollten</li>
+              <li>Was passiert ist vs. was Sie erwartet haben</li>
+              <li>Schritte zur Reproduktion (1–2–3…)</li>
+              <li>iPhone‑Modell und iOS‑Version</li>
+              <li>Client Planner Version (Einstellungen → Über)</li>
+              <li>Screenshots oder kurze Bildschirmaufnahme (wenn möglich)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-anchor="getting-started">
+          <h2>2) Schnelle Hilfe</h2>
+          <div class="twoCol">
+            <div class="linkBox">
+              <h3>Häufige Fragen</h3>
+              <ul>
+                <li><strong>Termin verschieben oder bearbeiten?</strong> Termin öffnen, Datum/Uhrzeit ändern — der Kalender aktualisiert sich sofort.</li>
+                <li><strong>Termin bestätigen?</strong> Status im Termin (Geplant / Bestätigt usw.) umstellen.</li>
+                <li><strong>Kunden suchen?</strong> „Kunden“ öffnen und die Suche nutzen — sie findet Namen, Tags und Notizen.</li>
+              </ul>
+            </div>
+            <div class="linkBox">
+              <h3>Datensicherheit</h3>
+              <ul>
+                <li>Daten bleiben standardmäßig auf dem Gerät.</li>
+                <li>Backups/Exporte sind optional und werden von Ihnen gestartet.</li>
+                <li>App‑Sperre (Face ID / Touch ID) für zusätzlichen Schutz.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="chips" aria-label="Support-Kurzinfos">
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Kalender</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Kunden</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Services</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Erinnerungen</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Backups</span>
+          </div>
+        </section>
+
+        <section data-anchor="sync-backup">
+          <h2>3) Backups, Wiederherstellung & Export</h2>
+          <h3>iCloud‑Backup</h3>
+          <ul>
+            <li>Backups werden in iCloud Drive unter Ihrer Apple ID gespeichert.</li>
+            <li>Ist iCloud Drive deaktiviert, kann die Erstellung fehlschlagen.</li>
+            <li>Wenn ein neues Backup fehlschlägt, bleibt das vorherige möglichst erhalten.</li>
+          </ul>
+
+          <h3>Wiederherstellung</h3>
+          <ul>
+            <li>Die Wiederherstellung ersetzt die aktuellen Daten, um Duplikate zu vermeiden.</li>
+            <li>Wenn Sie unsicher sind, schreiben Sie uns vorher — am besten mit Screenshot der Backup‑Liste.</li>
+          </ul>
+
+          <h3>Export</h3>
+          <ul>
+            <li>Beim Export wird eine Datei erstellt und ein Ziel über das iOS‑Teilen‑Menü ausgewählt.</li>
+            <li>Danach wird die Datei vom gewählten Dienst verwaltet.</li>
+          </ul>
+
+          <div class="callout warn">
+            <div class="calloutTitle">Tipp</div>
+            <p>Beim Gerätewechsel: zuerst Backup auf dem alten Gerät erstellen, dann auf dem neuen wiederherstellen.</p>
+          </div>
+        </section>
+
+        <section data-anchor="notifications">
+          <h2>4) Benachrichtigungen</h2>
+          <p>Client Planner nutzt lokale Benachrichtigungen (auf dem Gerät). Wenn Erinnerungen fehlen:</p>
+          <ul>
+            <li>iOS: Einstellungen → Mitteilungen → Client Planner prüfen.</li>
+            <li>Fokus / „Nicht stören“ kontrollieren.</li>
+            <li>In der App sicherstellen, dass Erinnerungen aktiviert sind.</li>
+          </ul>
+        </section>
+
+        <section data-anchor="subscriptions">
+          <h2>5) Abos & Abrechnung</h2>
+          <p>Zahlungen werden von Apple verarbeitet. Abos verwalten oder kündigen:</p>
+          <ul>
+            <li>iOS: Einstellungen → Apple ID → Abonnements.</li>
+            <li>Oder App Store → Profil → Abonnements.</li>
+          </ul>
+
+          <h3>Käufe wiederherstellen</h3>
+          <p>Wenn Premium nach Gerätewechsel oder Neuinstallation nicht erkannt wird, „Käufe wiederherstellen“ in der App nutzen (falls vorhanden) oder uns schreiben.</p>
+
+          <div class="callout bad">
+            <div class="calloutTitle">Wichtig</div>
+            <p>Wir können Abos nicht für Sie verwalten — das geht nur über Apple. Wir helfen gern bei Erkennungs-/Freischaltungsproblemen in der App.</p>
+          </div>
+        </section>
+
+        <section data-anchor="privacy-legal">
+          <h2>6) Datenschutz & Rechtliches</h2>
+          <div class="twoCol">
+            <div class="linkBox">
+              <h3>Datenschutzerklärung</h3>
+              <p><a href="https://clientplanner.github.io/suport/PrivacyPolicy.html">Öffnen</a></p>
+            </div>
+            <div class="linkBox">
+              <h3>Nutzungsbedingungen</h3>
+              <p><a href="https://clientplanner.github.io/suport/TermsOfUse.html">Öffnen</a></p>
+            </div>
+          </div>
+          <p>Client Planner ist so konzipiert, dass Daten standardmäßig lokal bleiben — ohne Third‑Party‑Tracking.</p>
+        </section>
+
+        <section data-anchor="report">
+          <h2>7) Fehler melden</h2>
+          <p>Je genauer, desto besser: kurze Schritte, klare Screenshots, reproduzierbar. 🙂</p>
+          <ul>
+            <li>Schritte zur Reproduktion</li>
+            <li>Screenshots/Bildschirmaufnahme</li>
+            <li>Exakte Fehlermeldung (falls vorhanden)</li>
+          </ul>
+          <p>An: <a href="mailto:clientplanner.suport@gmail.com?subject=Client%20Planner%20Bug%20Report">clientplanner.suport@gmail.com</a></p>
+        </section>
+
+        <footer class="docFooter">
+          <p>© 2026 Client Planner</p>
+        </footer>
+      </article>
+
+      <!-- ES -->
+      <article class="doc" data-lang="es" data-active="false">
+        <header class="docHeader">
+          <h1>Client Planner — Soporte</h1>
+          <div class="meta"><span class="metaLabel">Actualizado:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+        </header>
+
+        <nav class="toc" aria-label="Contenido">
+          <div class="tocTitle">Contenido</div>
+          <ol>
+            <li><a href="#contact">1) Contactar con soporte</a></li>
+            <li><a href="#getting-started">2) Ayuda rápida</a></li>
+            <li><a href="#sync-backup">3) Copias, restauración y exportación</a></li>
+            <li><a href="#notifications">4) Notificaciones</a></li>
+            <li><a href="#subscriptions">5) Suscripciones y facturación</a></li>
+            <li><a href="#privacy-legal">6) Privacidad y legal</a></li>
+            <li><a href="#report">7) Informar de un error</a></li>
+          </ol>
+        </nav>
+
+        <section data-anchor="contact">
+          <h2>1) Contactar con soporte</h2>
+          <p>La forma más fácil de contactarnos es por email. Normalmente respondemos en pocos días laborables.</p>
+          <p class="contact"><a href="mailto:clientplanner.suport@gmail.com?subject=Client%20Planner%20Soporte">clientplanner.suport@gmail.com</a></p>
+
+          <div class="callout good">
+            <div class="calloutTitle">Incluye estos datos para ayudarte más rápido</div>
+            <ul>
+              <li>Qué intentabas hacer</li>
+              <li>Qué ocurrió vs. qué esperabas</li>
+              <li>Pasos para reproducirlo (1–2–3…)</li>
+              <li>Modelo de iPhone y versión de iOS</li>
+              <li>Versión de Client Planner (Ajustes → Acerca de)</li>
+              <li>Capturas o grabación corta de pantalla (si puedes)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-anchor="getting-started">
+          <h2>2) Ayuda rápida</h2>
+          <div class="twoCol">
+            <div class="linkBox">
+              <h3>Preguntas frecuentes</h3>
+              <ul>
+                <li><strong>¿Mover o editar una cita?</strong> Abre la cita y cambia fecha/hora — el calendario se actualiza al instante.</li>
+                <li><strong>¿Confirmar una cita?</strong> Cambia el estado dentro de la cita (Planificada / Confirmada, etc.).</li>
+                <li><strong>¿Buscar clientes?</strong> Abre “Clientes” y usa la búsqueda — encuentra por nombre, etiquetas y notas.</li>
+              </ul>
+            </div>
+            <div class="linkBox">
+              <h3>Seguridad de los datos</h3>
+              <ul>
+                <li>Tus datos se guardan en el dispositivo por defecto.</li>
+                <li>Copias y exportaciones son opcionales y las inicias tú.</li>
+                <li>Activa el bloqueo (Face ID / Touch ID) si quieres más privacidad.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="chips" aria-label="Accesos rápidos">
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Calendario</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Clientes</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Servicios</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Recordatorios</span>
+            <span class="chip"><span class="chipDot" aria-hidden="true"></span>Copias</span>
+          </div>
+        </section>
+
+        <section data-anchor="sync-backup">
+          <h2>3) Copias, restauración y exportación</h2>
+          <h3>Copia en iCloud</h3>
+          <ul>
+            <li>Las copias se guardan en iCloud Drive con tu Apple ID.</li>
+            <li>Si iCloud Drive está desactivado, la copia puede fallar.</li>
+            <li>Si una copia nueva falla, se conserva la anterior cuando sea posible.</li>
+          </ul>
+
+          <h3>Restauración</h3>
+          <ul>
+            <li>La restauración reemplaza los datos actuales para evitar duplicados.</li>
+            <li>Si dudas antes de restaurar, escríbenos y adjunta una captura de tu lista de copias.</li>
+          </ul>
+
+          <h3>Exportación</h3>
+          <ul>
+            <li>La exportación crea un archivo y eliges destino (Archivos, email, mensajería, etc.).</li>
+            <li>El archivo exportado queda gestionado por el destino que selecciones.</li>
+          </ul>
+
+          <div class="callout warn">
+            <div class="calloutTitle">Consejo</div>
+            <p>Si cambias de iPhone: primero crea una copia en el dispositivo antiguo y luego restaura en el nuevo.</p>
+          </div>
+        </section>
+
+        <section data-anchor="notifications">
+          <h2>4) Notificaciones</h2>
+          <p>Client Planner usa notificaciones locales (en el dispositivo). Si no llegan:</p>
+          <ul>
+            <li>iOS: Ajustes → Notificaciones → Client Planner.</li>
+            <li>Revisa Enfoque / No molestar.</li>
+            <li>Comprueba que los recordatorios estén activados en la app.</li>
+          </ul>
+        </section>
+
+        <section data-anchor="subscriptions">
+          <h2>5) Suscripciones y facturación</h2>
+          <p>Los pagos los procesa Apple. Para gestionar o cancelar la suscripción:</p>
+          <ul>
+            <li>iOS: Ajustes → Apple ID → Suscripciones.</li>
+            <li>O App Store → perfil → Suscripciones.</li>
+          </ul>
+
+          <h3>Restaurar compras</h3>
+          <p>Si Premium no se reconoce tras reinstalar o cambiar de dispositivo, usa “Restaurar compras” en la app (si está disponible) o escríbenos.</p>
+
+          <div class="callout bad">
+            <div class="calloutTitle">Importante</div>
+            <p>No podemos gestionar suscripciones por ti — solo Apple. Podemos ayudarte a solucionar problemas de reconocimiento en la app.</p>
+          </div>
+        </section>
+
+        <section data-anchor="privacy-legal">
+          <h2>6) Privacidad y legal</h2>
+          <div class="twoCol">
+            <div class="linkBox">
+              <h3>Política de privacidad</h3>
+              <p><a href="https://clientplanner.github.io/suport/PrivacyPolicy.html">Abrir</a></p>
+            </div>
+            <div class="linkBox">
+              <h3>Términos de uso</h3>
+              <p><a href="https://clientplanner.github.io/suport/TermsOfUse.html">Abrir</a></p>
+            </div>
+          </div>
+          <p>Client Planner está diseñado para mantener tus datos en el dispositivo por defecto y sin seguimiento de terceros.</p>
+        </section>
+
+        <section data-anchor="report">
+          <h2>7) Informar de un error</h2>
+          <p>Nos encantan los errores claros: pasos simples y reproducibles. 🙂</p>
+          <ul>
+            <li>Pasos para reproducir</li>
+            <li>Capturas o grabación de pantalla</li>
+            <li>Texto exacto del error (si aparece)</li>
+          </ul>
+          <p>Envíalo a <a href="mailto:clientplanner.suport@gmail.com?subject=Client%20Planner%20Informe%20de%20error">clientplanner.suport@gmail.com</a>.</p>
+        </section>
+
+        <footer class="docFooter">
+          <p>© 2026 Client Planner</p>
+        </footer>
+      </article>
+
+    </main>
+
+    <footer class="siteFooter">
+      <p>© 2026 Client Planner</p>
+    </footer>
+  </div>
+
+<script>
+(function() {
+  const storageKey = "clientplanner_support_lang";
+  const btns = Array.from(document.querySelectorAll("[data-lang-btn]"));
+  const docs = Array.from(document.querySelectorAll("article.doc"));
+  const anchors = Array.from(document.querySelectorAll("[data-anchor]"));
+  const label = document.getElementById("langLabel");
+  const labels = {
+    en: "Language",
+    uk: "Мова",
+    de: "Sprache",
+    es: "Idioma"
+  };
+
+  function normalize(lang) {
+    if (!lang) return "en";
+    const value = String(lang).toLowerCase();
+    if (value.startsWith("uk")) return "uk";
+    if (value.startsWith("ua")) return "uk";
+    if (value.startsWith("en")) return "en";
+    if (value.startsWith("de")) return "de";
+    if (value.startsWith("es")) return "es";
+    return "en";
+  }
+
+  function syncAnchors(lang) {
+    anchors.forEach(node => node.removeAttribute("id"));
+    const active = docs.find(d => d.dataset.lang === lang);
+    if (!active) return;
+    active.querySelectorAll("[data-anchor]").forEach(node => {
+      node.id = node.dataset.anchor;
+    });
+  }
+
+  function scrollToHash(lang) {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const active = docs.find(d => d.dataset.lang === lang);
+    if (!active) return;
+    const target = active.querySelector(hash);
+    if (target) {
+      target.scrollIntoView({ block: "start" });
+    }
+  }
+
+  function setLang(lang, opts = {}) {
+    const resolved = normalize(lang);
+    docs.forEach(d => {
+      const isActive = d.dataset.lang === resolved;
+      d.dataset.active = isActive ? "true" : "false";
+      d.setAttribute("aria-hidden", isActive ? "false" : "true");
+    });
+    btns.forEach(b => {
+      b.setAttribute("aria-pressed", b.dataset.langBtn === resolved ? "true" : "false");
+    });
+    document.documentElement.setAttribute("lang", resolved);
+    if (label) {
+      label.textContent = labels[resolved] || labels.en;
+    }
+    syncAnchors(resolved);
+    if (!opts.skipPersist) {
+      try { localStorage.setItem(storageKey, resolved); } catch (e) {}
+    }
+    if (!opts.skipScroll) {
+      scrollToHash(resolved);
+    }
+  }
+
+  btns.forEach(b => {
+    b.addEventListener("click", () => setLang(b.dataset.langBtn));
+  });
+
+  const group = document.querySelector("[data-lang-group]");
+  if (group) {
+    group.addEventListener("keydown", event => {
+      const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+      if (!keys.includes(event.key)) return;
+      event.preventDefault();
+      const activeIndex = btns.findIndex(b => b.getAttribute("aria-pressed") === "true");
+      let nextIndex = activeIndex === -1 ? 0 : activeIndex;
+      if (event.key === "ArrowLeft") nextIndex = (activeIndex - 1 + btns.length) % btns.length;
+      if (event.key === "ArrowRight") nextIndex = (activeIndex + 1) % btns.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = btns.length - 1;
+      const next = btns[nextIndex];
+      if (next) {
+        next.focus();
+        setLang(next.dataset.langBtn);
+      }
+    });
+  }
+
+  const url = new URL(window.location.href);
+  const q = url.searchParams.get("lang");
+  const saved = (() => { try { return localStorage.getItem(storageKey); } catch (e) { return null; } })();
+  const browser = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+  const initial = normalize(q || saved || browser);
+  setLang(initial, { skipPersist: Boolean(q), skipScroll: true });
+  if (window.location.hash) {
+    scrollToHash(initial);
+  }
+  window.addEventListener("hashchange", () => {
+    const active = docs.find(d => d.dataset.active === "true");
+    const current = active ? active.dataset.lang : initial;
+    scrollToHash(current);
+  });
+})();
+</script>
+</body>
+</html>

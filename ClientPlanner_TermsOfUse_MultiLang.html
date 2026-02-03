@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Client Planner — Terms of Use</title>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Client Planner Terms of Use (English, Ukrainian, German, Spanish)" />
+    <style>
+    :root {
+      --bg: #f5f6f8;
+      --card: #ffffff;
+      --text: #111111;
+      --muted: #5b5f67;
+      --border: rgba(0,0,0,0.10);
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+      --radius: 18px;
+      --max: 920px;
+      --accent: #0a84ff;
+      --chip: rgba(0,0,0,0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0c0f;
+        --card: #121318;
+        --text: #f5f5f7;
+        --muted: #a5a7ad;
+        --border: rgba(255,255,255,0.10);
+        --shadow: 0 10px 30px rgba(0,0,0,0.35);
+        --chip: rgba(255,255,255,0.10);
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      color-scheme: light dark;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: calc(24px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left));
+    }
+    @media (min-width: 720px) {
+      .wrap {
+        padding: calc(32px + env(safe-area-inset-top)) calc(24px + env(safe-area-inset-right)) calc(64px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
+      }
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 650;
+      letter-spacing: -0.2px;
+    }
+    .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), rgba(10,132,255,0.55));
+      box-shadow: 0 6px 16px rgba(10,132,255,0.25);
+      flex: 0 0 auto;
+    }
+    .lang {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .langLabel {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .segmented {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+      overflow: hidden;
+    }
+    .segmented button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--muted);
+      min-width: 48px;
+      line-height: 1;
+    }
+    .segmented button[aria-pressed="true"] {
+      background: var(--chip);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .segmented button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 18px 12px;
+    }
+    @media (min-width: 720px) {
+      .card {
+        padding: 28px 32px 16px;
+      }
+    }
+    article.doc {
+      display: none;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    article.doc[data-active="true"] {
+      display: block;
+    }
+    .docHeader h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: -0.6px;
+      line-height: 1.15;
+    }
+    .meta {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .metaLabel {
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .toc {
+      margin-top: 18px;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(127,127,127,0.04);
+    }
+    .tocTitle {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 18px;
+      columns: 1;
+      gap: 12px;
+    }
+    @media (min-width: 760px) {
+      .toc ol {
+        columns: 2;
+      }
+    }
+    .toc a {
+      color: var(--text);
+    }
+    section {
+      margin-top: 18px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(127,127,127,0.10);
+      scroll-margin-top: 18px;
+    }
+    section:first-of-type {
+      border-top: 0;
+    }
+    h2 {
+      margin: 10px 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    h3 {
+      margin: 12px 0 6px;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    p {
+      margin: 8px 0;
+      color: var(--text);
+    }
+    ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+    li {
+      margin: 6px 0;
+      color: var(--text);
+    }
+    .contact {
+      font-size: 16px;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(10,132,255,0.08);
+      border: 1px solid rgba(10,132,255,0.18);
+      display: inline-block;
+    }
+    .docFooter {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(127,127,127,0.10);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .siteFooter {
+      margin-top: 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>Client Planner</div>
+      </div>
+
+      <div class="lang" role="group" aria-label="Language picker">
+        <div class="langLabel" id="langLabel">Language</div>
+        <div class="segmented" aria-describedby="langLabel" data-lang-group>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang-btn="uk" aria-pressed="false">UA</button>
+          <button type="button" data-lang-btn="de" aria-pressed="false">DE</button>
+          <button type="button" data-lang-btn="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="card" id="card">
+<article class="doc" data-lang="en" data-active="false">
+  <header class="docHeader">
+    <h1>Terms of Use</h1>
+    <div class="meta"><span class="metaLabel">Last updated:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <div class="tocTitle">Contents</div>
+    <ol>
+      <li><a href="#acceptance">Acceptance of these Terms</a></li>
+<li><a href="#account">No account required</a></li>
+<li><a href="#license">License and permitted use</a></li>
+<li><a href="#subscriptions">Subscriptions and payments</a></li>
+<li><a href="#data">Your content and responsibility</a></li>
+<li><a href="#backups">Backups, restore, and data loss prevention</a></li>
+<li><a href="#thirdparty">Third‑party services</a></li>
+<li><a href="#updates">Updates and changes</a></li>
+<li><a href="#disclaimer">Disclaimer of warranties</a></li>
+<li><a href="#liability">Limitation of liability</a></li>
+<li><a href="#termination">Termination</a></li>
+<li><a href="#governinglaw">Governing law</a></li>
+    </ol>
+  </nav>
+
+  <section data-anchor="acceptance">
+<h2>Acceptance of these Terms</h2>
+
+<p>These Terms of Use (“Terms”) govern your use of Client Planner (the “App”). By downloading, installing, or using the App, you agree to these Terms. If you do not agree, do not use the App.</p>
+<p>The App is intended for people who manage client appointments and related notes. It is not a medical device and is not designed for emergency use.</p>
+
+</section>
+<section data-anchor="account">
+<h2>No account required</h2>
+
+<p>Client Planner works primarily as an offline app. You do not need to create an in‑app account to use core features. Some optional features (such as iCloud Backup &amp; Restore) rely on your Apple ID and iCloud settings.</p>
+
+</section>
+<section data-anchor="license">
+<h2>License and permitted use</h2>
+
+<p>We grant you a personal, non‑exclusive, non‑transferable license to use the App on Apple devices that you own or control, in accordance with Apple’s App Store rules.</p>
+<p>You may use the App for your own business or personal workflow. You may not:</p>
+<ul>
+  <li>Copy, modify, reverse engineer, decompile, or attempt to extract the source code of the App, except where permitted by law.</li>
+  <li>Sell, rent, sublicense, or redistribute the App.</li>
+  <li>Use the App to store or process unlawful content, or to harass, abuse, or harm others.</li>
+</ul>
+
+</section>
+<section data-anchor="subscriptions">
+<h2>Subscriptions and payments</h2>
+
+<p>Some functionality may be available via subscription. Pricing, trial availability, and renewal terms are shown in the App and are managed by Apple through your Apple ID.</p>
+<p>If you start a subscription, it will automatically renew unless cancelled at least 24 hours before the end of the current period. You can manage or cancel your subscription in your Apple ID account settings.</p>
+<p>We do not receive your full payment information. Apple processes payments and provides us with subscription status.</p>
+
+</section>
+<section data-anchor="data">
+<h2>Your content and responsibility</h2>
+
+<p>You are responsible for the information you enter into the App (for example: client names, contact details, notes, and appointment details). Please make sure you have the right to store this information and that you comply with applicable laws.</p>
+<p>Because the App may store sensitive business information, we recommend enabling device security (passcode/Face ID) and keeping your iOS version up to date.</p>
+
+</section>
+<section data-anchor="backups">
+<h2>Backups, restore, and data loss prevention</h2>
+
+<p>If you enable iCloud Backup, backups are stored in your iCloud Drive under <em>Client Planner/Backups</em>. Availability depends on your device settings, iCloud status, and network conditions.</p>
+<p>Restore is designed as a “replace current data” operation. Before restoring, the App will show a warning and may recommend creating a backup first. If a restore fails, the App should keep your current data intact.</p>
+<p>Even with careful engineering, no backup system can guarantee zero risk. You are encouraged to keep periodic backups and verify that iCloud is enabled on your device.</p>
+
+</section>
+<section data-anchor="thirdparty">
+<h2>Third‑party services</h2>
+
+<p>The App may interact with Apple services such as iCloud Drive, StoreKit (subscriptions), and system notifications. Their availability and behavior are governed by Apple’s terms and your device settings.</p>
+
+</section>
+<section data-anchor="updates">
+<h2>Updates and changes</h2>
+
+<p>We may update the App from time to time to improve features, security, or compatibility. Some updates may be required for continued use.</p>
+<p>We may update these Terms occasionally. If changes are significant, we may provide notice in the App or on our website. Continuing to use the App after changes become effective means you accept the updated Terms.</p>
+
+</section>
+<section data-anchor="disclaimer">
+<h2>Disclaimer of warranties</h2>
+
+<p>The App is provided “as is” and “as available”. To the maximum extent permitted by law, we disclaim all warranties, express or implied, including fitness for a particular purpose and non‑infringement.</p>
+<p>We do not warrant that the App will be error‑free, uninterrupted, or that backups/restores will always succeed in every environment.</p>
+
+</section>
+<section data-anchor="liability">
+<h2>Limitation of liability</h2>
+
+<p>To the maximum extent permitted by law, we are not liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, revenue, profits, or business opportunities arising from your use of the App.</p>
+<p>Where liability cannot be excluded, it will be limited to the amount you paid for the App or subscription during the 12 months before the event giving rise to the claim.</p>
+
+</section>
+<section data-anchor="termination">
+<h2>Termination</h2>
+
+<p>You can stop using the App at any time by uninstalling it. You may also cancel any subscription through Apple. We may suspend or terminate access to subscription features if required by law, if you violate these Terms, or if Apple indicates your subscription is not active.</p>
+
+</section>
+<section data-anchor="governinglaw">
+<h2>Governing law</h2>
+
+<p>These Terms are governed by the laws applicable in your place of residence, unless local law requires otherwise. Consumer protection laws may grant you additional rights.</p>
+
+</section>
+
+  <footer class="docFooter">
+    <p><strong>Contact</strong>: <a href="mailto:clientplanner.suport@gmail.com">clientplanner.suport@gmail.com</a></p>
+  </footer>
+</article>
+
+<article class="doc" data-lang="uk" data-active="false">
+  <header class="docHeader">
+    <h1>Умови використання</h1>
+    <div class="meta"><span class="metaLabel">Оновлено:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+  </header>
+
+  <nav class="toc" aria-label="Зміст">
+    <div class="tocTitle">Зміст</div>
+    <ol>
+      <li><a href="#acceptance">Прийняття умов</a></li>
+<li><a href="#account">Без створення акаунта</a></li>
+<li><a href="#license">Ліцензія та дозволене використання</a></li>
+<li><a href="#subscriptions">Підписки та оплата</a></li>
+<li><a href="#data">Ваші дані та відповідальність</a></li>
+<li><a href="#backups">Резервні копії, відновлення та захист від втрати даних</a></li>
+<li><a href="#thirdparty">Сторонні сервіси</a></li>
+<li><a href="#updates">Оновлення та зміни</a></li>
+<li><a href="#disclaimer">Відмова від гарантій</a></li>
+<li><a href="#liability">Обмеження відповідальності</a></li>
+<li><a href="#termination">Припинення використання</a></li>
+<li><a href="#governinglaw">Застосовне право</a></li>
+    </ol>
+  </nav>
+
+  <section data-anchor="acceptance">
+<h2>Прийняття умов</h2>
+
+<p>Ці Умови використання (“Умови”) регулюють користування застосунком Client Planner (“Застосунок”). Завантажуючи, встановлюючи або використовуючи Застосунок, ви погоджуєтеся з цими Умовами. Якщо ви не погоджуєтесь — не використовуйте Застосунок.</p>
+<p>Застосунок призначений для планування записів і ведення нотаток про клієнтів. Це не медичний продукт і не призначений для екстрених ситуацій.</p>
+
+</section>
+<section data-anchor="account">
+<h2>Без створення акаунта</h2>
+
+<p>Client Planner працює переважно офлайн. Для основних функцій не потрібно створювати акаунт усередині застосунку. Деякі опційні можливості (наприклад, резервні копії та відновлення через iCloud) залежать від вашого Apple ID та налаштувань iCloud.</p>
+
+</section>
+<section data-anchor="license">
+<h2>Ліцензія та дозволене використання</h2>
+
+<p>Ми надаємо вам особисту, невиключну, непередавану ліцензію на використання Застосунку на пристроях Apple, які ви володієте або контролюєте, відповідно до правил App Store.</p>
+<p>Ви можете використовувати Застосунок для своєї роботи або особистого процесу. Заборонено:</p>
+<ul>
+  <li>Копіювати, змінювати, декомпілювати, виконувати зворотну інженерію або намагатися отримати вихідний код (крім випадків, дозволених законом).</li>
+  <li>Продавати, здавати в оренду, субліцензувати або розповсюджувати Застосунок.</li>
+  <li>Використовувати Застосунок для незаконного контенту або для переслідування/шкоди іншим.</li>
+</ul>
+
+</section>
+<section data-anchor="subscriptions">
+<h2>Підписки та оплата</h2>
+
+<p>Частина функцій може бути доступною за підпискою. Вартість, наявність пробного періоду та умови продовження відображаються у Застосунку та керуються Apple через ваш Apple ID.</p>
+<p>Підписка автоматично продовжується, якщо її не скасувати щонайменше за 24 години до завершення поточного періоду. Керувати підпискою та скасувати автопродовження можна в налаштуваннях Apple ID.</p>
+<p>Ми не отримуємо ваших платіжних даних у повному обсязі. Оплату обробляє Apple і повідомляє нам лише статус підписки.</p>
+
+</section>
+<section data-anchor="data">
+<h2>Ваші дані та відповідальність</h2>
+
+<p>Ви відповідаєте за інформацію, яку вводите у Застосунок (наприклад: імена клієнтів, контакти, нотатки, деталі записів). Переконайтеся, що маєте право зберігати ці дані та дотримуєтеся чинного законодавства.</p>
+<p>Оскільки Застосунок може містити важливі робочі дані, рекомендуємо увімкнути захист пристрою (код/Face ID) та оновлювати iOS.</p>
+
+</section>
+<section data-anchor="backups">
+<h2>Резервні копії, відновлення та захист від втрати даних</h2>
+
+<p>Якщо ви ввімкнули резервні копії iCloud, вони зберігаються у вашому iCloud Drive в теці <em>Client Planner/Backups</em>. Доступність залежить від налаштувань пристрою, стану iCloud та мережі.</p>
+<p>Відновлення працює як “заміна поточних даних”. Перед відновленням Застосунок показує попередження та може рекомендувати створити резервну копію.</p>
+<p>Навіть за якісної реалізації жодна система не гарантує нульового ризику. Періодично робіть резервні копії та перевіряйте, що iCloud увімкнено.</p>
+
+</section>
+<section data-anchor="thirdparty">
+<h2>Сторонні сервіси</h2>
+
+<p>Застосунок може взаємодіяти із сервісами Apple, такими як iCloud Drive, StoreKit (підписки) та системні сповіщення. Їхня робота регулюється умовами Apple та вашими налаштуваннями.</p>
+
+</section>
+<section data-anchor="updates">
+<h2>Оновлення та зміни</h2>
+
+<p>Ми можемо оновлювати Застосунок для покращення функцій, безпеки або сумісності. Деякі оновлення можуть бути необхідними для подальшого використання.</p>
+<p>Ми також можемо час від часу змінювати ці Умови. Якщо зміни суттєві, ми можемо повідомити про це у Застосунку або на сайті. Продовжуючи користування після набуття чинності змін, ви приймаєте оновлені Умови.</p>
+
+</section>
+<section data-anchor="disclaimer">
+<h2>Відмова від гарантій</h2>
+
+<p>Застосунок надається “як є” та “за наявності”. У максимально допустимих межах ми відмовляємося від будь‑яких гарантій, явних чи неявних.</p>
+<p>Ми не гарантуємо, що Застосунок працюватиме без помилок чи перерв, або що резервні копії/відновлення завжди будуть успішними в усіх умовах.</p>
+
+</section>
+<section data-anchor="liability">
+<h2>Обмеження відповідальності</h2>
+
+<p>У максимально допустимих межах ми не несемо відповідальності за непрямі, випадкові, спеціальні чи наслідкові збитки, а також за втрату даних, доходу чи прибутку, що виникають у зв’язку з використанням Застосунку.</p>
+<p>Якщо відповідальність не може бути виключена, вона обмежується сумою, сплаченою вами за Застосунок або підписку протягом 12 місяців до події, що спричинила претензію.</p>
+
+</section>
+<section data-anchor="termination">
+<h2>Припинення використання</h2>
+
+<p>Ви можете припинити користування у будь‑який момент, видаливши Застосунок. Також ви можете скасувати підписку через Apple. Ми можемо обмежити доступ до підпискових функцій, якщо цього вимагає закон, якщо ви порушуєте ці Умови, або якщо Apple повідомляє, що підписка не активна.</p>
+
+</section>
+<section data-anchor="governinglaw">
+<h2>Застосовне право</h2>
+
+<p>Ці Умови регулюються законами, що застосовуються у вашій країні проживання, якщо місцеве законодавство не вимагає іншого. Закони про захист прав споживачів можуть надавати вам додаткові права.</p>
+
+</section>
+
+  <footer class="docFooter">
+    <p><strong>Contact</strong>: <a href="mailto:clientplanner.suport@gmail.com">clientplanner.suport@gmail.com</a></p>
+  </footer>
+</article>
+
+<article class="doc" data-lang="de" data-active="false">
+  <header class="docHeader">
+    <h1>Nutzungsbedingungen</h1>
+    <div class="meta"><span class="metaLabel">Zuletzt aktualisiert:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+  </header>
+
+  <nav class="toc" aria-label="Inhalt">
+    <div class="tocTitle">Inhalt</div>
+    <ol>
+      <li><a href="#acceptance">Annahme dieser Bedingungen</a></li>
+<li><a href="#account">Kein Konto erforderlich</a></li>
+<li><a href="#license">Lizenz und zulässige Nutzung</a></li>
+<li><a href="#subscriptions">Abonnements und Zahlungen</a></li>
+<li><a href="#data">Ihre Inhalte und Verantwortung</a></li>
+<li><a href="#backups">Backups, Wiederherstellung und Schutz vor Datenverlust</a></li>
+<li><a href="#thirdparty">Dienste von Drittanbietern</a></li>
+<li><a href="#updates">Updates und Änderungen</a></li>
+<li><a href="#disclaimer">Haftungsausschluss für Gewährleistungen</a></li>
+<li><a href="#liability">Haftungsbeschränkung</a></li>
+<li><a href="#termination">Beendigung</a></li>
+<li><a href="#governinglaw">Anwendbares Recht</a></li>
+    </ol>
+  </nav>
+
+  <section data-anchor="acceptance">
+<h2>Annahme dieser Bedingungen</h2>
+
+<p>Diese Nutzungsbedingungen („Bedingungen“) regeln die Nutzung von Client Planner (die „App“). Durch das Herunterladen, Installieren oder Verwenden der App stimmen Sie diesen Bedingungen zu. Wenn Sie nicht zustimmen, verwenden Sie die App nicht.</p>
+<p>Die App dient der Terminplanung und der Verwaltung von Kundendaten/Notizen. Sie ist kein Medizinprodukt und nicht für Notfälle bestimmt.</p>
+
+</section>
+<section data-anchor="account">
+<h2>Kein Konto erforderlich</h2>
+
+<p>Client Planner funktioniert hauptsächlich offline. Für die Kernfunktionen ist kein In‑App‑Konto erforderlich. Einige optionale Funktionen (z. B. iCloud‑Backup &amp; Wiederherstellung) hängen von Ihrer Apple‑ID und Ihren iCloud‑Einstellungen ab.</p>
+
+</section>
+<section data-anchor="license">
+<h2>Lizenz und zulässige Nutzung</h2>
+
+<p>Wir gewähren Ihnen eine persönliche, nicht ausschließliche und nicht übertragbare Lizenz zur Nutzung der App auf Apple‑Geräten, die Sie besitzen oder kontrollieren, gemäß den App‑Store‑Regeln von Apple.</p>
+<p>Sie dürfen die App für Ihren Arbeitsalltag oder private Abläufe nutzen. Sie dürfen nicht:</p>
+<ul>
+  <li>die App kopieren, verändern, zurückentwickeln, dekompilieren oder versuchen, den Quellcode zu extrahieren (außer soweit gesetzlich erlaubt).</li>
+  <li>die App verkaufen, vermieten, unterlizenzieren oder weiterverbreiten.</li>
+  <li>die App für rechtswidrige Inhalte oder zur Belästigung/Schädigung anderer verwenden.</li>
+</ul>
+
+</section>
+<section data-anchor="subscriptions">
+<h2>Abonnements und Zahlungen</h2>
+
+<p>Einige Funktionen können per Abonnement verfügbar sein. Preise, Testzeiträume und Verlängerungsbedingungen werden in der App angezeigt und über Apple mit Ihrer Apple‑ID verwaltet.</p>
+<p>Ein Abonnement verlängert sich automatisch, sofern es nicht mindestens 24 Stunden vor Ablauf der aktuellen Periode gekündigt wird. Sie können Ihr Abonnement in den Einstellungen Ihrer Apple‑ID verwalten oder kündigen.</p>
+<p>Wir erhalten keine vollständigen Zahlungsdaten. Apple verarbeitet die Zahlung und stellt uns den Abostatus zur Verfügung.</p>
+
+</section>
+<section data-anchor="data">
+<h2>Ihre Inhalte und Verantwortung</h2>
+
+<p>Sie sind verantwortlich für die Daten, die Sie in die App eingeben (z. B. Kundennamen, Kontaktdaten, Notizen und Termindetails). Stellen Sie sicher, dass Sie diese Daten speichern dürfen und geltende Gesetze einhalten.</p>
+<p>Da die App sensible Geschäftsdaten enthalten kann, empfehlen wir Geräteschutz (Code/Face ID) und aktuelle iOS‑Updates.</p>
+
+</section>
+<section data-anchor="backups">
+<h2>Backups, Wiederherstellung und Schutz vor Datenverlust</h2>
+
+<p>Wenn iCloud‑Backup aktiviert ist, werden Sicherungen in Ihrem iCloud Drive unter <em>Client Planner/Backups</em> gespeichert. Die Verfügbarkeit hängt von Geräteeinstellungen, iCloud‑Status und Netzwerk ab.</p>
+<p>Die Wiederherstellung ist als „Ersetzen der aktuellen Daten“ konzipiert. Vor dem Wiederherstellen zeigt die App eine deutliche Warnung an und kann empfehlen, zuerst ein Backup zu erstellen. Schlägt eine Wiederherstellung fehl, sollen Ihre aktuellen Daten erhalten bleiben.</p>
+<p>Trotz sorgfältiger Umsetzung kann kein System ein Risiko von null garantieren. Wir empfehlen regelmäßige Backups und die Prüfung, ob iCloud aktiv ist.</p>
+
+</section>
+<section data-anchor="thirdparty">
+<h2>Dienste von Drittanbietern</h2>
+
+<p>Die App kann Apple‑Dienste wie iCloud Drive, StoreKit (Abos) und Systembenachrichtigungen nutzen. Deren Verfügbarkeit richtet sich nach den Bedingungen von Apple und Ihren Geräteeinstellungen.</p>
+
+</section>
+<section data-anchor="updates">
+<h2>Updates und Änderungen</h2>
+
+<p>Wir können die App gelegentlich aktualisieren, um Funktionen, Sicherheit oder Kompatibilität zu verbessern. Einige Updates können erforderlich sein, um die App weiter zu nutzen.</p>
+<p>Wir können diese Bedingungen ebenfalls ändern. Bei wesentlichen Änderungen können wir in der App oder auf der Website informieren. Wenn Sie die App nach Inkrafttreten weiter nutzen, akzeptieren Sie die aktualisierten Bedingungen.</p>
+
+</section>
+<section data-anchor="disclaimer">
+<h2>Haftungsausschluss für Gewährleistungen</h2>
+
+<p>Die App wird „wie besehen“ und „wie verfügbar“ bereitgestellt. Soweit gesetzlich zulässig, schließen wir alle ausdrücklichen oder stillschweigenden Gewährleistungen aus.</p>
+<p>Wir garantieren nicht, dass die App fehlerfrei oder unterbrechungsfrei funktioniert oder dass Backup/Wiederherstellung in jeder Umgebung stets erfolgreich ist.</p>
+
+</section>
+<section data-anchor="liability">
+<h2>Haftungsbeschränkung</h2>
+
+<p>Soweit gesetzlich zulässig, haften wir nicht für indirekte, zufällige, besondere oder Folgeschäden sowie für Datenverlust, entgangenen Umsatz oder Gewinn, die aus der Nutzung der App entstehen.</p>
+<p>Sofern eine Haftung nicht ausgeschlossen werden kann, ist sie auf den Betrag begrenzt, den Sie in den letzten 12 Monaten vor dem schadenstiftenden Ereignis für App oder Abonnement gezahlt haben.</p>
+
+</section>
+<section data-anchor="termination">
+<h2>Beendigung</h2>
+
+<p>Sie können die Nutzung jederzeit beenden, indem Sie die App deinstallieren. Ein Abonnement können Sie über Apple kündigen. Wir können den Zugriff auf Abo‑Funktionen aus rechtlichen Gründen, bei Verstoß gegen diese Bedingungen oder bei inaktivem Abo‑Status sperren.</p>
+
+</section>
+<section data-anchor="governinglaw">
+<h2>Anwendbares Recht</h2>
+
+<p>Diese Bedingungen unterliegen dem Recht Ihres Wohnsitzlandes, sofern zwingendes lokales Recht nichts anderes vorsieht. Verbraucherschutzgesetze können Ihnen zusätzliche Rechte einräumen.</p>
+
+</section>
+
+  <footer class="docFooter">
+    <p><strong>Contact</strong>: <a href="mailto:clientplanner.suport@gmail.com">clientplanner.suport@gmail.com</a></p>
+  </footer>
+</article>
+
+<article class="doc" data-lang="es" data-active="false">
+  <header class="docHeader">
+    <h1>Términos de uso</h1>
+    <div class="meta"><span class="metaLabel">Última actualización:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+  </header>
+
+  <nav class="toc" aria-label="Contenido">
+    <div class="tocTitle">Contenido</div>
+    <ol>
+      <li><a href="#acceptance">Aceptación de estos términos</a></li>
+<li><a href="#account">No se requiere cuenta</a></li>
+<li><a href="#license">Licencia y uso permitido</a></li>
+<li><a href="#subscriptions">Suscripciones y pagos</a></li>
+<li><a href="#data">Tu contenido y responsabilidad</a></li>
+<li><a href="#backups">Copias de seguridad, restauración y prevención de pérdida de datos</a></li>
+<li><a href="#thirdparty">Servicios de terceros</a></li>
+<li><a href="#updates">Actualizaciones y cambios</a></li>
+<li><a href="#disclaimer">Exención de garantías</a></li>
+<li><a href="#liability">Limitación de responsabilidad</a></li>
+<li><a href="#termination">Terminación</a></li>
+<li><a href="#governinglaw">Ley aplicable</a></li>
+    </ol>
+  </nav>
+
+  <section data-anchor="acceptance">
+<h2>Aceptación de estos términos</h2>
+
+<p>Estas Condiciones de uso (“Condiciones”) regulan el uso de Client Planner (la “App”). Al descargar, instalar o usar la App, aceptas estas Condiciones. Si no estás de acuerdo, no uses la App.</p>
+<p>La App está pensada para planificar citas y guardar notas de clientes. No es un dispositivo médico ni está diseñada para emergencias.</p>
+
+</section>
+<section data-anchor="account">
+<h2>No se requiere cuenta</h2>
+
+<p>Client Planner funciona principalmente sin conexión. No necesitas crear una cuenta dentro de la App para usar las funciones principales. Algunas funciones opcionales (como copias de seguridad y restauración con iCloud) dependen de tu Apple ID y de la configuración de iCloud.</p>
+
+</section>
+<section data-anchor="license">
+<h2>Licencia y uso permitido</h2>
+
+<p>Te concedemos una licencia personal, no exclusiva e intransferible para usar la App en dispositivos Apple que poseas o controles, de acuerdo con las normas del App Store.</p>
+<p>Puedes usar la App para tu trabajo o tu organización personal. No puedes:</p>
+<ul>
+  <li>Copiar, modificar, realizar ingeniería inversa, descompilar o intentar extraer el código fuente, salvo cuando la ley lo permita.</li>
+  <li>Vender, alquilar, sublicenciar o redistribuir la App.</li>
+  <li>Usar la App para contenido ilícito o para acosar, abusar o dañar a otras personas.</li>
+</ul>
+
+</section>
+<section data-anchor="subscriptions">
+<h2>Suscripciones y pagos</h2>
+
+<p>Algunas funciones pueden estar disponibles mediante suscripción. El precio, las pruebas y la renovación se muestran en la App y los gestiona Apple a través de tu Apple ID.</p>
+<p>La suscripción se renueva automáticamente salvo que la canceles al menos 24 horas antes del final del periodo actual. Puedes gestionar o cancelar la suscripción en los ajustes de tu Apple ID.</p>
+<p>No recibimos tu información completa de pago. Apple procesa los pagos y nos informa del estado de la suscripción.</p>
+
+</section>
+<section data-anchor="data">
+<h2>Tu contenido y responsabilidad</h2>
+
+<p>Eres responsable de la información que introduces en la App (por ejemplo: nombres de clientes, datos de contacto, notas y detalles de citas). Asegúrate de tener derecho a almacenarla y de cumplir con la normativa aplicable.</p>
+<p>Como la App puede contener información sensible, recomendamos activar la seguridad del dispositivo (código/Face ID) y mantener iOS actualizado.</p>
+
+</section>
+<section data-anchor="backups">
+<h2>Copias de seguridad, restauración y prevención de pérdida de datos</h2>
+
+<p>Si activas las copias de seguridad en iCloud, se guardan en tu iCloud Drive en <em>Client Planner/Backups</em>. La disponibilidad depende de la configuración del dispositivo, del estado de iCloud y de la red.</p>
+<p>La restauración está diseñada para “reemplazar los datos actuales”. Antes de restaurar, la App mostrará un aviso y puede recomendar crear una copia de seguridad. Si la restauración falla, la App debería mantener tus datos actuales intactos.</p>
+<p>Aun con una implementación cuidadosa, ningún sistema puede garantizar riesgo cero. Recomendamos realizar copias de seguridad periódicas y comprobar que iCloud esté habilitado.</p>
+
+</section>
+<section data-anchor="thirdparty">
+<h2>Servicios de terceros</h2>
+
+<p>La App puede interactuar con servicios de Apple como iCloud Drive, StoreKit (suscripciones) y notificaciones del sistema. Su disponibilidad y funcionamiento dependen de las condiciones de Apple y de la configuración del dispositivo.</p>
+
+</section>
+<section data-anchor="updates">
+<h2>Actualizaciones y cambios</h2>
+
+<p>Podemos actualizar la App para mejorar funciones, seguridad o compatibilidad. Algunas actualizaciones pueden ser necesarias para seguir usándola.</p>
+<p>También podemos modificar estas Condiciones. Si los cambios son importantes, podremos avisarte en la App o en el sitio web. Si sigues usando la App después de que entren en vigor, aceptas las Condiciones actualizadas.</p>
+
+</section>
+<section data-anchor="disclaimer">
+<h2>Exención de garantías</h2>
+
+<p>La App se proporciona “tal cual” y “según disponibilidad”. En la medida máxima permitida por la ley, rechazamos todas las garantías, expresas o implícitas.</p>
+<p>No garantizamos que la App esté libre de errores, que funcione sin interrupciones o que las copias/restauraciones siempre tengan éxito en todos los entornos.</p>
+
+</section>
+<section data-anchor="liability">
+<h2>Limitación de responsabilidad</h2>
+
+<p>En la medida máxima permitida por la ley, no somos responsables de daños indirectos, incidentales, especiales, consecuentes o punitivos, ni de pérdidas de datos, ingresos o beneficios derivadas del uso de la App.</p>
+<p>Cuando la responsabilidad no pueda excluirse, se limitará al importe que hayas pagado por la App o la suscripción durante los 12 meses anteriores al hecho que origine la reclamación.</p>
+
+</section>
+<section data-anchor="termination">
+<h2>Terminación</h2>
+
+<p>Puedes dejar de usar la App en cualquier momento desinstalándola. También puedes cancelar la suscripción a través de Apple. Podemos suspender el acceso a funciones de suscripción si lo exige la ley, si incumples estas Condiciones o si Apple indica que la suscripción no está activa.</p>
+
+</section>
+<section data-anchor="governinglaw">
+<h2>Ley aplicable</h2>
+
+<p>Estas Condiciones se rigen por las leyes aplicables en tu lugar de residencia, salvo que la normativa local exija lo contrario. Las leyes de protección del consumidor pueden otorgarte derechos adicionales.</p>
+
+</section>
+
+  <footer class="docFooter">
+    <p><strong>Contact</strong>: <a href="mailto:clientplanner.suport@gmail.com">clientplanner.suport@gmail.com</a></p>
+  </footer>
+</article>
+    </main>
+
+    <footer class="siteFooter">
+      <p>© 2026 Client Planner</p>
+    </footer>
+  </div>
+
+  <script>
+(function() {
+  const storageKey = "clientplanner_terms_lang";
+  const btns = Array.from(document.querySelectorAll("[data-lang-btn]"));
+  const docs = Array.from(document.querySelectorAll("article.doc"));
+  const anchors = Array.from(document.querySelectorAll("[data-anchor]"));
+  const label = document.getElementById("langLabel");
+  const labels = {
+    en: "Language",
+    uk: "Мова",
+    de: "Sprache",
+    es: "Idioma"
+  };
+
+  function normalize(lang) {
+    if (!lang) return "en";
+    const value = String(lang).toLowerCase();
+    if (value.startsWith("uk")) return "uk";
+    if (value.startsWith("en")) return "en";
+    if (value.startsWith("de")) return "de";
+    if (value.startsWith("es")) return "es";
+    return "en";
+  }
+
+  function syncAnchors(lang) {
+    anchors.forEach(node => node.removeAttribute("id"));
+    const active = docs.find(d => d.dataset.lang === lang);
+    if (!active) return;
+    active.querySelectorAll("[data-anchor]").forEach(node => {
+      node.id = node.dataset.anchor;
+    });
+  }
+
+  function scrollToHash(lang) {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const active = docs.find(d => d.dataset.lang === lang);
+    if (!active) return;
+    const target = active.querySelector(hash);
+    if (target) {
+      target.scrollIntoView({ block: "start" });
+    }
+  }
+
+  function setLang(lang, opts = {}) {
+    const resolved = normalize(lang);
+    docs.forEach(d => {
+      const isActive = d.dataset.lang === resolved;
+      d.dataset.active = isActive ? "true" : "false";
+      d.setAttribute("aria-hidden", isActive ? "false" : "true");
+    });
+    btns.forEach(b => {
+      b.setAttribute("aria-pressed", b.dataset.langBtn === resolved ? "true" : "false");
+    });
+    document.documentElement.setAttribute("lang", resolved);
+    if (label) {
+      label.textContent = labels[resolved] || labels.en;
+    }
+    syncAnchors(resolved);
+    if (!opts.skipPersist) {
+      try { localStorage.setItem(storageKey, resolved); } catch (e) {}
+    }
+    if (!opts.skipScroll) {
+      scrollToHash(resolved);
+    }
+  }
+
+  btns.forEach(b => {
+    b.addEventListener("click", () => setLang(b.dataset.langBtn));
+  });
+
+  const group = document.querySelector("[data-lang-group]");
+  if (group) {
+    group.addEventListener("keydown", event => {
+      const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+      if (!keys.includes(event.key)) return;
+      event.preventDefault();
+      const activeIndex = btns.findIndex(b => b.getAttribute("aria-pressed") === "true");
+      let nextIndex = activeIndex === -1 ? 0 : activeIndex;
+      if (event.key === "ArrowLeft") nextIndex = (activeIndex - 1 + btns.length) % btns.length;
+      if (event.key === "ArrowRight") nextIndex = (activeIndex + 1) % btns.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = btns.length - 1;
+      const next = btns[nextIndex];
+      if (next) {
+        next.focus();
+        setLang(next.dataset.langBtn);
+      }
+    });
+  }
+
+  const url = new URL(window.location.href);
+  const q = url.searchParams.get("lang");
+  const saved = (() => { try { return localStorage.getItem(storageKey); } catch (e) { return null; } })();
+  const browser = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+  const initial = normalize(q || saved || browser);
+  setLang(initial, { skipPersist: Boolean(q), skipScroll: true });
+  if (window.location.hash) {
+    scrollToHash(initial);
+  }
+  window.addEventListener("hashchange", () => {
+    const active = docs.find(d => d.dataset.active === "true");
+    const current = active ? active.dataset.lang : initial;
+    scrollToHash(current);
+  });
+})();
+  </script>
+</body>
+</html>

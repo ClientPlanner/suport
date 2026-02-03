@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Client Planner — Privacy Policy</title>
+  <meta name="description" content="Client Planner Privacy Policy (English, Ukrainian, German, Spanish)" />
+  <meta name="color-scheme" content="light dark" />
+    <style>
+    :root {
+      --bg: #f5f6f8;
+      --card: #ffffff;
+      --text: #111111;
+      --muted: #5b5f67;
+      --border: rgba(0,0,0,0.10);
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+      --radius: 18px;
+      --max: 920px;
+      --accent: #0a84ff;
+      --chip: rgba(0,0,0,0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0c0f;
+        --card: #121318;
+        --text: #f5f5f7;
+        --muted: #a5a7ad;
+        --border: rgba(255,255,255,0.10);
+        --shadow: 0 10px 30px rgba(0,0,0,0.35);
+        --chip: rgba(255,255,255,0.10);
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      color-scheme: light dark;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: calc(24px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left));
+    }
+    @media (min-width: 720px) {
+      .wrap {
+        padding: calc(32px + env(safe-area-inset-top)) calc(24px + env(safe-area-inset-right)) calc(64px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
+      }
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 650;
+      letter-spacing: -0.2px;
+    }
+    .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), rgba(10,132,255,0.55));
+      box-shadow: 0 6px 16px rgba(10,132,255,0.25);
+      flex: 0 0 auto;
+    }
+    .lang {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .langLabel {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .segmented {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+      overflow: hidden;
+    }
+    .segmented button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--muted);
+      min-width: 48px;
+      line-height: 1;
+    }
+    .segmented button[aria-pressed="true"] {
+      background: var(--chip);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .segmented button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 18px 12px;
+    }
+    @media (min-width: 720px) {
+      .card {
+        padding: 28px 32px 16px;
+      }
+    }
+    article.doc {
+      display: none;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    article.doc[data-active="true"] {
+      display: block;
+    }
+    .docHeader h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: -0.6px;
+      line-height: 1.15;
+    }
+    .meta {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .metaLabel {
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .toc {
+      margin-top: 18px;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(127,127,127,0.04);
+    }
+    .tocTitle {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      columns: 1;
+      gap: 12px;
+    }
+    .toc li {
+      break-inside: avoid;
+    }
+    @media (min-width: 760px) {
+      .toc ol {
+        columns: 2;
+      }
+    }
+    .toc a {
+      color: var(--text);
+    }
+    section {
+      margin-top: 18px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(127,127,127,0.10);
+      scroll-margin-top: 18px;
+    }
+    section:first-of-type {
+      border-top: 0;
+    }
+    h2 {
+      margin: 10px 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    h3 {
+      margin: 12px 0 6px;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    p {
+      margin: 8px 0;
+      color: var(--text);
+    }
+    ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+    li {
+      margin: 6px 0;
+      color: var(--text);
+    }
+    .contact {
+      font-size: 16px;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(10,132,255,0.08);
+      border: 1px solid rgba(10,132,255,0.18);
+      display: inline-block;
+    }
+    .docFooter {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(127,127,127,0.10);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .siteFooter {
+      margin-top: 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>Client Planner</div>
+      </div>
+
+      <div class="lang" role="group" aria-label="Language picker">
+        <div class="langLabel" id="langLabel">Language</div>
+        <div class="segmented" aria-describedby="langLabel" data-lang-group>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang-btn="uk" aria-pressed="false">UA</button>
+          <button type="button" data-lang-btn="de" aria-pressed="false">DE</button>
+          <button type="button" data-lang-btn="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="card" id="card">
+      
+<article class="doc" data-lang="en" data-active="false">
+  <header class="docHeader">
+    <h1>Client Planner — Privacy Policy</h1>
+    <div class="meta"><span class="metaLabel">Effective date:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <div class="tocTitle">Contents</div>
+    <ol>
+      <li><a href="#short">1) The short version</a></li>
+      <li><a href="#data">2) What data Client Planner processes</a></li>
+      <li><a href="#not-collect">3) What we do not collect</a></li>
+      <li><a href="#storage">4) Where your data is stored</a></li>
+      <li><a href="#leaves">5) When data leaves your device</a></li>
+      <li><a href="#apple">6) Apple services we rely on</a></li>
+      <li><a href="#notifications">7) Notifications</a></li>
+      <li><a href="#biometrics">8) Face ID / Touch ID (App Lock)</a></li>
+      <li><a href="#safety">9) Backups and restore safety</a></li>
+      <li><a href="#retention">10) Data retention and deletion</a></li>
+      <li><a href="#security">11) Security</a></li>
+      <li><a href="#children">12) Children’s privacy</a></li>
+      <li><a href="#international">13) International users</a></li>
+      <li><a href="#changes">14) Changes to this policy</a></li>
+      <li><a href="#contact">15) Contact</a></li>
+    </ol>
+  </nav>
+
+  <section data-anchor="short">
+    <h2>1) The short version</h2>
+    <p>Your data stays on your device by default.</p>
+<p>We don’t run our own servers to store your client or appointment database.</p>
+<p>Backups and exports are optional. Data leaves the device only when you explicitly create a backup/export.</p>
+<p>We don’t use third‑party analytics or advertising SDKs.</p>
+<p>Apple services may be involved for subscriptions (StoreKit) and optional backups (iCloud Drive).</p>
+  </section>
+
+  <section data-anchor="data">
+    <h2>2) What data Client Planner processes</h2>
+    <p>Client Planner processes information you enter to provide scheduling and client‑management features. Depending on usage, this may include:</p>
+
+    <h3>Data you create in the app</h3>
+    <ul><li>Clients: names, contact details (if you enter them), notes, tags, custom fields.</li>
+<li>Appointments: date/time, status, service references, notes, pricing details.</li>
+<li>Services & categories: names, durations, prices, colors, categories you choose.</li>
+<li>Templates: reusable text you save for quick notes.</li>
+<li>Working hours & profile settings: schedule configuration and preferences.</li></ul>
+
+    <h3>App settings & feature state</h3>
+    <ul><li>Notification preferences (reminder toggles).</li>
+<li>App Lock preference (if enabled).</li>
+<li>UI preferences and internal state required for app functionality.</li></ul>
+
+    <h3>Subscription entitlement</h3>
+    <p>We store Pro entitlement state locally so features unlock correctly. Payments are handled by Apple.</p>
+<p>No account is required to use Client Planner.</p>
+  </section>
+
+  <section data-anchor="not-collect">
+    <h2>3) What we do not collect</h2>
+    <p>We designed Client Planner to avoid unnecessary data collection. We do not collect:</p>
+    <ul><li>Advertising identifiers.</li>
+<li>Behavioral analytics about how you use the app.</li>
+<li>Your client database on our servers.</li>
+<li>Your Face ID / Touch ID information (iOS handles biometrics; we never see it).</li></ul>
+  </section>
+
+  <section data-anchor="storage">
+    <h2>4) Where your data is stored</h2>
+    <ul><li>On your device: stored locally using Apple system frameworks (e.g., Core Data).</li>
+<li>Optional iCloud Drive backups: if you create backups, files are saved in iCloud Drive under your Apple ID.</li>
+<li>Exports: if you export data, the destination is your choice via the iOS share sheet.</li></ul>
+  </section>
+
+  <section data-anchor="leaves">
+    <h2>5) When data leaves your device</h2>
+    <p>Data leaves your device only when you choose an action that requires it:</p>
+    <ul><li>Create an iCloud backup → a backup file is written to iCloud Drive.</li>
+<li>Export data → a file is created and shared to a destination you select.</li>
+<li>Purchase/restore a subscription → StoreKit communicates with Apple to process payment and verify entitlements.</li></ul>
+  </section>
+
+  <section data-anchor="apple">
+    <h2>6) Apple services we rely on</h2>
+    <ul><li>StoreKit (Subscriptions). Apple processes payment and subscription management. We receive entitlement status so the app can unlock features.</li>
+<li>iCloud Drive (Backups). If you use backups, Apple’s iCloud Drive stores backup files. iCloud processing follows your Apple ID and iCloud settings.</li></ul>
+    <p>For more information, consult Apple’s privacy documentation and iCloud/StoreKit terms.</p>
+  </section>
+
+  <section data-anchor="notifications">
+    <h2>7) Notifications</h2>
+    <p>Client Planner can schedule local notifications (e.g., reminders about your schedule or unconfirmed appointments). Notifications are created on your device.</p>
+<p>You can control notification permissions in iOS Settings → Notifications → Client Planner.</p>
+  </section>
+
+  <section data-anchor="biometrics">
+    <h2>8) Face ID / Touch ID (App Lock)</h2>
+    <p>If you enable App Lock, the app uses Face ID / Touch ID / device passcode to unlock access. Biometric processing happens through iOS.</p>
+<p>Client Planner does not store biometric data and does not have access to your biometric template.</p>
+  </section>
+
+  <section data-anchor="safety">
+    <h2>9) Backups and restore safety</h2>
+    <ul><li>When creating a new backup, the app preserves the previous backup if the new one fails.</li>
+<li>Restore is designed as a “replace current data” flow to avoid duplicates and inconsistent state.</li></ul>
+  </section>
+
+  <section data-anchor="retention">
+    <h2>10) Data retention and deletion</h2>
+    <ul><li>On‑device data: stays on your device until you delete it or uninstall the app.</li>
+<li>iCloud backup files: remain in your iCloud Drive until you delete them.</li>
+<li>Exported files: remain wherever you share them; manage those copies in the destination service.</li></ul>
+  </section>
+
+  <section data-anchor="security">
+    <h2>11) Security</h2>
+    <p>We take reasonable steps to keep your data safe:</p>
+    <ul><li>Uses Apple platform security features and standard iOS sandboxing.</li>
+<li>Optional App Lock can restrict access on your device.</li>
+<li>No system can guarantee perfect security, but we minimize exposure by keeping data local by default.</li></ul>
+  </section>
+
+  <section data-anchor="children">
+    <h2>12) Children’s privacy</h2>
+    <p>Client Planner is not directed to children under 13 and is intended for professional use. We do not knowingly collect personal data from children.</p>
+  </section>
+
+  <section data-anchor="international">
+    <h2>13) International users</h2>
+    <p>Client Planner can be used globally. If you use iCloud backups or subscriptions, Apple may process related data according to Apple’s policies and your Apple ID/iCloud settings. Client Planner does not operate its own user‑data servers.</p>
+  </section>
+
+  <section data-anchor="changes">
+    <h2>14) Changes to this policy</h2>
+    <p>We may update this policy to reflect app changes or legal requirements. When we do, we will update the effective date and publish the revised policy.</p>
+  </section>
+
+  <section data-anchor="contact">
+    <h2>15) Contact</h2>
+    <p>If you have questions about privacy in Client Planner, contact us at:</p>
+    <p class="contact"><a href="mailto:clientplanner.suport@gmail.com">clientplanner.suport@gmail.com</a></p>
+  </section>
+
+  <footer class="docFooter">
+    <p>© 2026 Client Planner</p>
+  </footer>
+</article>
+
+
+<article class="doc" data-lang="uk" data-active="false">
+  <header class="docHeader">
+    <h1>Client Planner — Політика конфіденційності</h1>
+    <div class="meta"><span class="metaLabel">Дата набрання чинності:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+  </header>
+
+  <nav class="toc" aria-label="Зміст">
+    <div class="tocTitle">Зміст</div>
+    <ol>
+      <li><a href="#short">1) Коротко про головне</a></li>
+      <li><a href="#data">2) Які дані обробляє Client Planner</a></li>
+      <li><a href="#not-collect">3) Що ми не збираємо</a></li>
+      <li><a href="#storage">4) Де зберігаються ваші дані</a></li>
+      <li><a href="#leaves">5) Коли дані залишають пристрій</a></li>
+      <li><a href="#apple">6) Сервіси Apple, які ми використовуємо</a></li>
+      <li><a href="#notifications">7) Сповіщення</a></li>
+      <li><a href="#biometrics">8) Face ID / Touch ID (блокування застосунку)</a></li>
+      <li><a href="#safety">9) Безпека бекапів і відновлення</a></li>
+      <li><a href="#retention">10) Зберігання та видалення даних</a></li>
+      <li><a href="#security">11) Безпека</a></li>
+      <li><a href="#children">12) Конфіденційність дітей</a></li>
+      <li><a href="#international">13) Користувачі з інших країн</a></li>
+      <li><a href="#changes">14) Зміни в цій політиці</a></li>
+      <li><a href="#contact">15) Контакти</a></li>
+    </ol>
+  </nav>
+
+  <section data-anchor="short">
+    <h2>1) Коротко про головне</h2>
+    <p>Ваші дані за замовчуванням зберігаються на пристрої.</p>
+<p>Ми не маємо власних серверів для зберігання бази клієнтів чи записів.</p>
+<p>Резервні копії та експорт — опційні. Дані залишають пристрій лише тоді, коли ви свідомо створюєте бекап або експорт.</p>
+<p>Ми не використовуємо сторонні SDK для аналітики чи реклами.</p>
+<p>Сервіси Apple можуть бути залучені для підписок (StoreKit) та опційних бекапів (iCloud Drive).</p>
+  </section>
+
+  <section data-anchor="data">
+    <h2>2) Які дані обробляє Client Planner</h2>
+    <p>Client Planner обробляє інформацію, яку ви вводите, щоб забезпечити роботу розкладу та керування клієнтами. Залежно від використання це може включати:</p>
+
+    <h3>Дані, які ви створюєте в застосунку</h3>
+    <ul><li>Клієнти: імена, контактні дані (якщо ви їх додаєте), нотатки, теги, власні поля.</li>
+<li>Записи: дата/час, статус, пов’язані послуги, нотатки, деталі вартості.</li>
+<li>Послуги й категорії: назви, тривалість, ціни, кольори, обрані вами категорії.</li>
+<li>Шаблони: збережені тексти для швидких нотаток.</li>
+<li>Робочі години та налаштування профілю: графік роботи й ваші вподобання.</li></ul>
+
+    <h3>Налаштування застосунку та стан функцій</h3>
+    <ul><li>Налаштування сповіщень (перемикачі нагадувань).</li>
+<li>Налаштування блокування застосунку (якщо увімкнено).</li>
+<li>Налаштування інтерфейсу та внутрішній стан, необхідний для роботи застосунку.</li></ul>
+
+    <h3>Статус підписки</h3>
+    <p>Ми зберігаємо локально стан доступу до Преміум, щоб функції відкривалися коректно. Оплату обробляє Apple.</p>
+<p>Для використання Client Planner не потрібен обліковий запис.</p>
+  </section>
+
+  <section data-anchor="not-collect">
+    <h2>3) Що ми не збираємо</h2>
+    <p>Ми створили Client Planner так, щоб уникати зайвого збору даних. Ми не збираємо:</p>
+    <ul><li>Рекламні ідентифікатори.</li>
+<li>Поведінкову аналітику про те, як ви користуєтеся застосунком.</li>
+<li>Вашу базу клієнтів на наших серверах.</li>
+<li>Дані Face ID / Touch ID (біометрику обробляє iOS; ми її не бачимо).</li></ul>
+  </section>
+
+  <section data-anchor="storage">
+    <h2>4) Де зберігаються ваші дані</h2>
+    <ul><li>На вашому пристрої: локальне зберігання через системні фреймворки Apple (наприклад, Core Data).</li>
+<li>Опційні бекапи в iCloud Drive: якщо ви створюєте резервні копії, файли зберігаються в iCloud Drive під вашим Apple ID.</li>
+<li>Експорт: якщо ви експортуєте дані, місце збереження ви обираєте самі через меню поширення iOS.</li></ul>
+  </section>
+
+  <section data-anchor="leaves">
+    <h2>5) Коли дані залишають пристрій</h2>
+    <p>Дані залишають ваш пристрій лише тоді, коли ви обираєте дію, що цього потребує:</p>
+    <ul><li>Створити бекап в iCloud → файл резервної копії записується в iCloud Drive.</li>
+<li>Експорт даних → створюється файл і надсилається у вибране вами місце.</li>
+<li>Купівля/відновлення підписки → StoreKit спілкується з Apple для оплати та перевірки доступу.</li></ul>
+  </section>
+
+  <section data-anchor="apple">
+    <h2>6) Сервіси Apple, які ми використовуємо</h2>
+    <ul><li>StoreKit (підписки). Apple обробляє оплату та керує підпискою. Ми отримуємо лише статус доступу, щоб відкрити функції.</li>
+<li>iCloud Drive (бекапи). Якщо ви користуєтеся бекапами, файли зберігаються в iCloud Drive. Обробка iCloud залежить від вашого Apple ID та налаштувань iCloud.</li></ul>
+    <p>Детальніше дивіться в документації Apple щодо конфіденційності та умов iCloud/StoreKit.</p>
+  </section>
+
+  <section data-anchor="notifications">
+    <h2>7) Сповіщення</h2>
+    <p>Client Planner може створювати локальні сповіщення (наприклад, нагадування про розклад або непідтверджені записи). Вони формуються на вашому пристрої.</p>
+<p>Дозволи на сповіщення можна керувати в iOS: Налаштування → Сповіщення → Client Planner.</p>
+  </section>
+
+  <section data-anchor="biometrics">
+    <h2>8) Face ID / Touch ID (блокування застосунку)</h2>
+    <p>Якщо ви вмикаєте блокування, застосунок використовує Face ID / Touch ID / код-пароль пристрою. Біометрія обробляється системою iOS.</p>
+<p>Client Planner не зберігає біометричні дані й не має доступу до вашого біометричного шаблону.</p>
+  </section>
+
+  <section data-anchor="safety">
+    <h2>9) Безпека бекапів і відновлення</h2>
+    <ul><li>Під час створення нового бекапу застосунок зберігає попередній, якщо новий не створився успішно.</li>
+<li>Відновлення працює як «замінити поточні дані», щоб уникати дублікатів і неконсистентного стану.</li></ul>
+  </section>
+
+  <section data-anchor="retention">
+    <h2>10) Зберігання та видалення даних</h2>
+    <ul><li>Дані на пристрої: зберігаються, доки ви їх не видалите або не видалите застосунок.</li>
+<li>Файли бекапів в iCloud: зберігаються у вашому iCloud Drive, доки ви їх не видалите.</li>
+<li>Експортовані файли: залишаються там, куди ви їх надіслали; керуйте ними в обраному сервісі.</li></ul>
+  </section>
+
+  <section data-anchor="security">
+    <h2>11) Безпека</h2>
+    <p>Ми робимо розумні кроки, щоб захистити ваші дані:</p>
+    <ul><li>Використовуємо механізми безпеки платформи Apple та стандартну ізоляцію iOS (sandbox).</li>
+<li>Опційне блокування застосунку може обмежити доступ на вашому пристрої.</li>
+<li>Жодна система не гарантує абсолютної безпеки, але ми мінімізуємо ризики, зберігаючи дані локально за замовчуванням.</li></ul>
+  </section>
+
+  <section data-anchor="children">
+    <h2>12) Конфіденційність дітей</h2>
+    <p>Client Planner не призначений для дітей до 13 років і створений для професійного використання. Ми свідомо не збираємо персональні дані дітей.</p>
+  </section>
+
+  <section data-anchor="international">
+    <h2>13) Користувачі з інших країн</h2>
+    <p>Client Planner можна використовувати в усьому світі. Якщо ви користуєтеся iCloud-бекапами або підписками, Apple може обробляти пов’язані дані відповідно до своїх політик та налаштувань вашого Apple ID/iCloud. Ми не маємо власних серверів з даними користувачів.</p>
+  </section>
+
+  <section data-anchor="changes">
+    <h2>14) Зміни в цій політиці</h2>
+    <p>Ми можемо оновлювати цю політику через зміни в застосунку або вимоги закону. У такому разі ми оновимо дату набрання чинності та опублікуємо нову версію.</p>
+  </section>
+
+  <section data-anchor="contact">
+    <h2>15) Контакти</h2>
+    <p>Якщо у вас є питання щодо конфіденційності в Client Planner, напишіть нам:</p>
+    <p class="contact"><a href="mailto:clientplanner.suport@gmail.com">clientplanner.suport@gmail.com</a></p>
+  </section>
+
+  <footer class="docFooter">
+    <p>© 2026 Client Planner</p>
+  </footer>
+</article>
+
+
+<article class="doc" data-lang="de" data-active="false">
+  <header class="docHeader">
+    <h1>Client Planner — Datenschutzerklärung</h1>
+    <div class="meta"><span class="metaLabel">Gültig ab:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+  </header>
+
+  <nav class="toc" aria-label="Inhalt">
+    <div class="tocTitle">Inhalt</div>
+    <ol>
+      <li><a href="#short">1) Kurzfassung</a></li>
+      <li><a href="#data">2) Welche Daten Client Planner verarbeitet</a></li>
+      <li><a href="#not-collect">3) Was wir nicht erfassen</a></li>
+      <li><a href="#storage">4) Wo Ihre Daten gespeichert werden</a></li>
+      <li><a href="#leaves">5) Wann Daten Ihr Gerät verlassen</a></li>
+      <li><a href="#apple">6) Von uns genutzte Apple‑Dienste</a></li>
+      <li><a href="#notifications">7) Benachrichtigungen</a></li>
+      <li><a href="#biometrics">8) Face ID / Touch ID (App‑Sperre)</a></li>
+      <li><a href="#safety">9) Backup- und Wiederherstellungs‑Sicherheit</a></li>
+      <li><a href="#retention">10) Aufbewahrung und Löschung</a></li>
+      <li><a href="#security">11) Sicherheit</a></li>
+      <li><a href="#children">12) Datenschutz von Kindern</a></li>
+      <li><a href="#international">13) Internationale Nutzer</a></li>
+      <li><a href="#changes">14) Änderungen dieser Erklärung</a></li>
+      <li><a href="#contact">15) Kontakt</a></li>
+    </ol>
+  </nav>
+
+  <section data-anchor="short">
+    <h2>1) Kurzfassung</h2>
+    <p>Ihre Daten bleiben standardmäßig auf Ihrem Gerät.</p>
+<p>Wir betreiben keine eigenen Server, um Ihre Kunden- oder Termin-Datenbank zu speichern.</p>
+<p>Backups und Exporte sind optional. Daten verlassen das Gerät nur, wenn Sie aktiv ein Backup/Export erstellen.</p>
+<p>Wir verwenden keine Analyse- oder Werbe‑SDKs von Drittanbietern.</p>
+<p>Apple‑Dienste können für Abonnements (StoreKit) und optionale Backups (iCloud Drive) beteiligt sein.</p>
+  </section>
+
+  <section data-anchor="data">
+    <h2>2) Welche Daten Client Planner verarbeitet</h2>
+    <p>Client Planner verarbeitet Informationen, die Sie eingeben, um Terminplanung und Kundenverwaltung bereitzustellen. Je nach Nutzung kann dies umfassen:</p>
+
+    <h3>Daten, die Sie in der App erstellen</h3>
+    <ul><li>Kunden: Namen, Kontaktdaten (falls von Ihnen eingegeben), Notizen, Tags, benutzerdefinierte Felder.</li>
+<li>Termine: Datum/Uhrzeit, Status, Service‑Bezüge, Notizen, Preisdetails.</li>
+<li>Services & Kategorien: Namen, Dauer, Preise, Farben, von Ihnen gewählte Kategorien.</li>
+<li>Vorlagen: von Ihnen gespeicherte Texte für schnelle Notizen.</li>
+<li>Arbeitszeiten & Profileinstellungen: Zeitplan und Präferenzen.</li></ul>
+
+    <h3>App‑Einstellungen & Funktionszustand</h3>
+    <ul><li>Benachrichtigungseinstellungen (Reminder‑Schalter).</li>
+<li>App‑Sperre (falls aktiviert).</li>
+<li>UI‑Einstellungen und interner Zustand, der für die App‑Funktion erforderlich ist.</li></ul>
+
+    <h3>Abo‑Status</h3>
+    <p>Wir speichern den Premium‑Status lokal, damit Funktionen korrekt freigeschaltet werden. Zahlungen werden von Apple verarbeitet.</p>
+<p>Für die Nutzung von Client Planner ist kein Konto erforderlich.</p>
+  </section>
+
+  <section data-anchor="not-collect">
+    <h2>3) Was wir nicht erfassen</h2>
+    <p>Client Planner ist so gestaltet, dass unnötige Datenerfassung vermieden wird. Wir erfassen nicht:</p>
+    <ul><li>Werbe‑IDs.</li>
+<li>Verhaltens‑Analytics darüber, wie Sie die App nutzen.</li>
+<li>Ihre Kundendatenbank auf unseren Servern.</li>
+<li>Ihre Face ID / Touch ID‑Informationen (Biometrie wird von iOS verarbeitet; wir sehen sie nie).</li></ul>
+  </section>
+
+  <section data-anchor="storage">
+    <h2>4) Wo Ihre Daten gespeichert werden</h2>
+    <ul><li>Auf Ihrem Gerät: lokal gespeichert mit Apple‑Systemframeworks (z. B. Core Data).</li>
+<li>Optionale iCloud Drive‑Backups: Wenn Sie Backups erstellen, werden die Dateien in iCloud Drive unter Ihrer Apple ID gespeichert.</li>
+<li>Exporte: Beim Export wählen Sie das Ziel über das iOS‑Teilen‑Menü selbst aus.</li></ul>
+  </section>
+
+  <section data-anchor="leaves">
+    <h2>5) Wann Daten Ihr Gerät verlassen</h2>
+    <p>Daten verlassen Ihr Gerät nur, wenn Sie eine entsprechende Aktion ausführen:</p>
+    <ul><li>iCloud‑Backup erstellen → eine Backup‑Datei wird in iCloud Drive geschrieben.</li>
+<li>Daten exportieren → eine Datei wird erstellt und an ein von Ihnen gewähltes Ziel geteilt.</li>
+<li>Abo kaufen/wiederherstellen → StoreKit kommuniziert mit Apple für Zahlung und Berechtigung.</li></ul>
+  </section>
+
+  <section data-anchor="apple">
+    <h2>6) Von uns genutzte Apple‑Dienste</h2>
+    <ul><li>StoreKit (Abonnements). Apple verarbeitet Zahlungen und die Abo‑Verwaltung. Wir erhalten den Berechtigungsstatus, um Funktionen freizuschalten.</li>
+<li>iCloud Drive (Backups). Wenn Sie Backups nutzen, speichert iCloud Drive die Backup‑Dateien. Die Verarbeitung folgt Ihren Apple‑ID‑ und iCloud‑Einstellungen.</li></ul>
+    <p>Weitere Informationen finden Sie in Apples Datenschutzdokumentation sowie den iCloud/StoreKit‑Bedingungen.</p>
+  </section>
+
+  <section data-anchor="notifications">
+    <h2>7) Benachrichtigungen</h2>
+    <p>Client Planner kann lokale Benachrichtigungen planen (z. B. Erinnerungen an Ihren Zeitplan oder unbestätigte Termine). Benachrichtigungen werden auf Ihrem Gerät erstellt.</p>
+<p>Sie können die Berechtigungen in iOS unter Einstellungen → Mitteilungen → Client Planner steuern.</p>
+  </section>
+
+  <section data-anchor="biometrics">
+    <h2>8) Face ID / Touch ID (App‑Sperre)</h2>
+    <p>Wenn Sie die App‑Sperre aktivieren, nutzt die App Face ID / Touch ID / Gerätecode zum Entsperren. Die biometrische Verarbeitung erfolgt über iOS.</p>
+<p>Client Planner speichert keine biometrischen Daten und hat keinen Zugriff auf Ihr biometrisches Template.</p>
+  </section>
+
+  <section data-anchor="safety">
+    <h2>9) Backup- und Wiederherstellungs‑Sicherheit</h2>
+    <ul><li>Beim Erstellen eines neuen Backups bleibt das vorherige Backup erhalten, falls das neue fehlschlägt.</li>
+<li>Die Wiederherstellung ist als „aktuelle Daten ersetzen“ gestaltet, um Duplikate und inkonsistente Zustände zu vermeiden.</li></ul>
+  </section>
+
+  <section data-anchor="retention">
+    <h2>10) Aufbewahrung und Löschung</h2>
+    <ul><li>Gerätedaten: bleiben auf Ihrem Gerät, bis Sie sie löschen oder die App deinstallieren.</li>
+<li>iCloud‑Backup‑Dateien: bleiben in Ihrem iCloud Drive, bis Sie sie löschen.</li>
+<li>Exportierte Dateien: bleiben am gewählten Speicherort; verwalten Sie diese Kopien im jeweiligen Dienst.</li></ul>
+  </section>
+
+  <section data-anchor="security">
+    <h2>11) Sicherheit</h2>
+    <p>Wir ergreifen angemessene Maßnahmen, um Ihre Daten zu schützen:</p>
+    <ul><li>Nutzt die Sicherheitsfunktionen der Apple‑Plattform und das iOS‑Sandboxing.</li>
+<li>Die optionale App‑Sperre kann den Zugriff auf Ihrem Gerät einschränken.</li>
+<li>Kein System kann perfekte Sicherheit garantieren, aber wir minimieren die Angriffsfläche, indem Daten standardmäßig lokal bleiben.</li></ul>
+  </section>
+
+  <section data-anchor="children">
+    <h2>12) Datenschutz von Kindern</h2>
+    <p>Client Planner richtet sich nicht an Kinder unter 13 Jahren und ist für professionelle Nutzung gedacht. Wir erfassen wissentlich keine personenbezogenen Daten von Kindern.</p>
+  </section>
+
+  <section data-anchor="international">
+    <h2>13) Internationale Nutzer</h2>
+    <p>Client Planner kann weltweit genutzt werden. Wenn Sie iCloud‑Backups oder Abonnements verwenden, kann Apple entsprechende Daten gemäß seinen Richtlinien sowie Ihren Apple‑ID/iCloud‑Einstellungen verarbeiten. Client Planner betreibt keine eigenen Server für Nutzerdaten.</p>
+  </section>
+
+  <section data-anchor="changes">
+    <h2>14) Änderungen dieser Erklärung</h2>
+    <p>Wir können diese Erklärung aktualisieren, um Änderungen der App oder rechtliche Anforderungen abzubilden. Dann aktualisieren wir das Gültigkeitsdatum und veröffentlichen die überarbeitete Version.</p>
+  </section>
+
+  <section data-anchor="contact">
+    <h2>15) Kontakt</h2>
+    <p>Bei Fragen zum Datenschutz in Client Planner erreichen Sie uns unter:</p>
+    <p class="contact"><a href="mailto:clientplanner.suport@gmail.com">clientplanner.suport@gmail.com</a></p>
+  </section>
+
+  <footer class="docFooter">
+    <p>© 2026 Client Planner</p>
+  </footer>
+</article>
+
+
+<article class="doc" data-lang="es" data-active="false">
+  <header class="docHeader">
+    <h1>Client Planner — Política de privacidad</h1>
+    <div class="meta"><span class="metaLabel">Fecha de entrada en vigor:</span> <time datetime="2026-02-03">2026-02-03</time></div>
+  </header>
+
+  <nav class="toc" aria-label="Contenido">
+    <div class="tocTitle">Contenido</div>
+    <ol>
+      <li><a href="#short">1) Versión corta</a></li>
+      <li><a href="#data">2) Qué datos procesa Client Planner</a></li>
+      <li><a href="#not-collect">3) Qué no recopilamos</a></li>
+      <li><a href="#storage">4) Dónde se almacenan tus datos</a></li>
+      <li><a href="#leaves">5) Cuándo los datos salen del dispositivo</a></li>
+      <li><a href="#apple">6) Servicios de Apple que utilizamos</a></li>
+      <li><a href="#notifications">7) Notificaciones</a></li>
+      <li><a href="#biometrics">8) Face ID / Touch ID (Bloqueo de la app)</a></li>
+      <li><a href="#safety">9) Seguridad en copias y restauración</a></li>
+      <li><a href="#retention">10) Conservación y eliminación</a></li>
+      <li><a href="#security">11) Seguridad</a></li>
+      <li><a href="#children">12) Privacidad de menores</a></li>
+      <li><a href="#international">13) Usuarios internacionales</a></li>
+      <li><a href="#changes">14) Cambios en esta política</a></li>
+      <li><a href="#contact">15) Contacto</a></li>
+    </ol>
+  </nav>
+
+  <section data-anchor="short">
+    <h2>1) Versión corta</h2>
+    <p>Tus datos se guardan en tu dispositivo de forma predeterminada.</p>
+<p>No operamos servidores propios para almacenar tu base de datos de clientes o citas.</p>
+<p>Las copias de seguridad y las exportaciones son opcionales. Los datos solo salen del dispositivo cuando tú creas una copia/exportación de forma explícita.</p>
+<p>No usamos SDK de analítica ni de publicidad de terceros.</p>
+<p>Los servicios de Apple pueden intervenir para las suscripciones (StoreKit) y las copias opcionales (iCloud Drive).</p>
+  </section>
+
+  <section data-anchor="data">
+    <h2>2) Qué datos procesa Client Planner</h2>
+    <p>Client Planner procesa la información que introduces para ofrecer funciones de agenda y gestión de clientes. Según el uso, esto puede incluir:</p>
+
+    <h3>Datos que creas en la app</h3>
+    <ul><li>Clientes: nombres, datos de contacto (si los añades), notas, etiquetas, campos personalizados.</li>
+<li>Citas: fecha/hora, estado, servicios asociados, notas, detalles de precio.</li>
+<li>Servicios y categorías: nombres, duración, precios, colores y categorías que elijas.</li>
+<li>Plantillas: textos reutilizables que guardas para notas rápidas.</li>
+<li>Horario y ajustes del perfil: configuración del horario y preferencias.</li></ul>
+
+    <h3>Ajustes de la app y estado de funciones</h3>
+    <ul><li>Preferencias de notificaciones (interruptores de recordatorios).</li>
+<li>Preferencia de bloqueo de la app (si está activado).</li>
+<li>Preferencias de interfaz y estado interno necesario para el funcionamiento.</li></ul>
+
+    <h3>Derecho a suscripción</h3>
+    <p>Guardamos localmente el estado de acceso a Premium para desbloquear funciones correctamente. Los pagos los gestiona Apple.</p>
+<p>No se necesita una cuenta para usar Client Planner.</p>
+  </section>
+
+  <section data-anchor="not-collect">
+    <h2>3) Qué no recopilamos</h2>
+    <p>Diseñamos Client Planner para evitar recopilación innecesaria. No recopilamos:</p>
+    <ul><li>Identificadores publicitarios.</li>
+<li>Analítica de comportamiento sobre cómo usas la app.</li>
+<li>Tu base de datos de clientes en nuestros servidores.</li>
+<li>Información de Face ID / Touch ID (iOS gestiona la biometría; nosotros no la vemos).</li></ul>
+  </section>
+
+  <section data-anchor="storage">
+    <h2>4) Dónde se almacenan tus datos</h2>
+    <ul><li>En tu dispositivo: almacenamiento local con frameworks del sistema de Apple (p. ej., Core Data).</li>
+<li>Copias opcionales en iCloud Drive: si creas copias, los archivos se guardan en iCloud Drive bajo tu Apple ID.</li>
+<li>Exportaciones: al exportar, eliges el destino mediante la hoja para compartir de iOS.</li></ul>
+  </section>
+
+  <section data-anchor="leaves">
+    <h2>5) Cuándo los datos salen del dispositivo</h2>
+    <p>Los datos solo salen del dispositivo cuando eliges una acción que lo requiere:</p>
+    <ul><li>Crear copia en iCloud → se escribe un archivo de copia en iCloud Drive.</li>
+<li>Exportar datos → se crea un archivo y se comparte al destino que selecciones.</li>
+<li>Comprar/restaurar una suscripción → StoreKit se comunica con Apple para el pago y la verificación.</li></ul>
+  </section>
+
+  <section data-anchor="apple">
+    <h2>6) Servicios de Apple que utilizamos</h2>
+    <ul><li>StoreKit (suscripciones). Apple procesa el pago y la gestión de suscripciones. Recibimos el estado de acceso para desbloquear funciones.</li>
+<li>iCloud Drive (copias). Si usas copias, iCloud Drive almacena los archivos. El tratamiento sigue tu Apple ID y tus ajustes de iCloud.</li></ul>
+    <p>Para más información, consulta la documentación de privacidad de Apple y los términos de iCloud/StoreKit.</p>
+  </section>
+
+  <section data-anchor="notifications">
+    <h2>7) Notificaciones</h2>
+    <p>Client Planner puede programar notificaciones locales (p. ej., recordatorios de tu agenda o citas sin confirmar). Se crean en tu dispositivo.</p>
+<p>Puedes controlar los permisos en iOS: Ajustes → Notificaciones → Client Planner.</p>
+  </section>
+
+  <section data-anchor="biometrics">
+    <h2>8) Face ID / Touch ID (Bloqueo de la app)</h2>
+    <p>Si activas el bloqueo de la app, se usa Face ID / Touch ID / el código del dispositivo para desbloquear. El procesamiento biométrico lo realiza iOS.</p>
+<p>Client Planner no almacena datos biométricos ni tiene acceso a tu plantilla biométrica.</p>
+  </section>
+
+  <section data-anchor="safety">
+    <h2>9) Seguridad en copias y restauración</h2>
+    <ul><li>Al crear una copia nueva, la app conserva la copia anterior si la nueva falla.</li>
+<li>La restauración está diseñada como “reemplazar los datos actuales” para evitar duplicados y estados inconsistentes.</li></ul>
+  </section>
+
+  <section data-anchor="retention">
+    <h2>10) Conservación y eliminación</h2>
+    <ul><li>Datos en el dispositivo: permanecen hasta que los elimines o desinstales la app.</li>
+<li>Archivos de copia en iCloud: permanecen en tu iCloud Drive hasta que los elimines.</li>
+<li>Archivos exportados: permanecen donde los compartas; gestiona esas copias en el servicio de destino.</li></ul>
+  </section>
+
+  <section data-anchor="security">
+    <h2>11) Seguridad</h2>
+    <p>Tomamos medidas razonables para mantener tus datos seguros:</p>
+    <ul><li>Usa las funciones de seguridad de la plataforma Apple y el sandboxing estándar de iOS.</li>
+<li>El bloqueo opcional de la app puede restringir el acceso en tu dispositivo.</li>
+<li>Ningún sistema garantiza seguridad perfecta, pero reducimos la exposición manteniendo los datos locales por defecto.</li></ul>
+  </section>
+
+  <section data-anchor="children">
+    <h2>12) Privacidad de menores</h2>
+    <p>Client Planner no está dirigido a menores de 13 años y está pensado para uso profesional. No recopilamos deliberadamente datos personales de menores.</p>
+  </section>
+
+  <section data-anchor="international">
+    <h2>13) Usuarios internacionales</h2>
+    <p>Client Planner puede usarse en todo el mundo. Si utilizas copias en iCloud o suscripciones, Apple puede tratar datos relacionados según sus políticas y la configuración de tu Apple ID/iCloud. Client Planner no opera servidores propios de datos de usuarios.</p>
+  </section>
+
+  <section data-anchor="changes">
+    <h2>14) Cambios en esta política</h2>
+    <p>Podemos actualizar esta política para reflejar cambios de la app o requisitos legales. Cuando lo hagamos, actualizaremos la fecha de entrada en vigor y publicaremos la versión revisada.</p>
+  </section>
+
+  <section data-anchor="contact">
+    <h2>15) Contacto</h2>
+    <p>Si tienes preguntas sobre la privacidad en Client Planner, contáctanos en:</p>
+    <p class="contact"><a href="mailto:clientplanner.suport@gmail.com">clientplanner.suport@gmail.com</a></p>
+  </section>
+
+  <footer class="docFooter">
+    <p>© 2026 Client Planner</p>
+  </footer>
+</article>
+
+    </main>
+    <footer class="siteFooter">
+      <p>© 2026 Client Planner</p>
+    </footer>
+  </div>
+
+<script>
+(function() {
+  const storageKey = "clientplanner_policy_lang";
+  const btns = Array.from(document.querySelectorAll("[data-lang-btn]"));
+  const docs = Array.from(document.querySelectorAll("article.doc"));
+  const anchors = Array.from(document.querySelectorAll("[data-anchor]"));
+  const label = document.getElementById("langLabel");
+  const labels = {
+    en: "Language",
+    uk: "Мова",
+    de: "Sprache",
+    es: "Idioma"
+  };
+
+  function normalize(lang) {
+    if (!lang) return "en";
+    const value = String(lang).toLowerCase();
+    if (value.startsWith("uk")) return "uk";
+    if (value.startsWith("en")) return "en";
+    if (value.startsWith("de")) return "de";
+    if (value.startsWith("es")) return "es";
+    return "en";
+  }
+
+  function syncAnchors(lang) {
+    anchors.forEach(node => node.removeAttribute("id"));
+    const active = docs.find(d => d.dataset.lang === lang);
+    if (!active) return;
+    active.querySelectorAll("[data-anchor]").forEach(node => {
+      node.id = node.dataset.anchor;
+    });
+  }
+
+  function scrollToHash(lang) {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const active = docs.find(d => d.dataset.lang === lang);
+    if (!active) return;
+    const target = active.querySelector(hash);
+    if (target) {
+      target.scrollIntoView({ block: "start" });
+    }
+  }
+
+  function setLang(lang, opts = {}) {
+    const resolved = normalize(lang);
+    docs.forEach(d => {
+      const isActive = d.dataset.lang === resolved;
+      d.dataset.active = isActive ? "true" : "false";
+      d.setAttribute("aria-hidden", isActive ? "false" : "true");
+    });
+    btns.forEach(b => {
+      b.setAttribute("aria-pressed", b.dataset.langBtn === resolved ? "true" : "false");
+    });
+    document.documentElement.setAttribute("lang", resolved);
+    if (label) {
+      label.textContent = labels[resolved] || labels.en;
+    }
+    syncAnchors(resolved);
+    if (!opts.skipPersist) {
+      try { localStorage.setItem(storageKey, resolved); } catch (e) {}
+    }
+    if (!opts.skipScroll) {
+      scrollToHash(resolved);
+    }
+  }
+
+  btns.forEach(b => {
+    b.addEventListener("click", () => setLang(b.dataset.langBtn));
+  });
+
+  const group = document.querySelector("[data-lang-group]");
+  if (group) {
+    group.addEventListener("keydown", event => {
+      const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+      if (!keys.includes(event.key)) return;
+      event.preventDefault();
+      const activeIndex = btns.findIndex(b => b.getAttribute("aria-pressed") === "true");
+      let nextIndex = activeIndex === -1 ? 0 : activeIndex;
+      if (event.key === "ArrowLeft") nextIndex = (activeIndex - 1 + btns.length) % btns.length;
+      if (event.key === "ArrowRight") nextIndex = (activeIndex + 1) % btns.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = btns.length - 1;
+      const next = btns[nextIndex];
+      if (next) {
+        next.focus();
+        setLang(next.dataset.langBtn);
+      }
+    });
+  }
+
+  const url = new URL(window.location.href);
+  const q = url.searchParams.get("lang");
+  const saved = (() => { try { return localStorage.getItem(storageKey); } catch (e) { return null; } })();
+  const browser = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+  const initial = normalize(q || saved || browser);
+  setLang(initial, { skipPersist: Boolean(q), skipScroll: true });
+  if (window.location.hash) {
+    scrollToHash(initial);
+  }
+  window.addEventListener("hashchange", () => {
+    const active = docs.find(d => d.dataset.active === "true");
+    const current = active ? active.dataset.lang : initial;
+    scrollToHash(current);
+  });
+})();
+</script>
+</body>
+</html>
